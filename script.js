@@ -4,17 +4,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalSlides = slides.length;
     let currentSlide = 0;
 
+    function isPortraitMode() {
+        return window.innerHeight > window.innerWidth;
+    }
+
     // --- Resizing Logic to keep 16:9 aspect ratio ---
     function resizePresentation() {
         const baseWidth = 1440;
         const baseHeight = 810;
         
-        const scaleX = window.innerWidth / baseWidth;
-        const scaleY = window.innerHeight / baseHeight;
-        
-        const scale = Math.min(scaleX, scaleY);
-        
-        container.style.transform = `scale(${scale})`;
+        const isPortrait = isPortraitMode();
+
+        if (isPortrait) {
+            const scaleX = window.innerHeight / baseWidth;
+            const scaleY = window.innerWidth / baseHeight;
+            const scale = Math.min(scaleX, scaleY);
+            
+            container.style.transform = `rotate(90deg) scale(${scale})`;
+        } else {
+            const scaleX = window.innerWidth / baseWidth;
+            const scaleY = window.innerHeight / baseHeight;
+            const scale = Math.min(scaleX, scaleY);
+            
+            container.style.transform = `scale(${scale})`;
+        }
     }
 
     window.addEventListener('resize', resizePresentation);
@@ -64,13 +77,20 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const clickX = e.clientX;
-        const screenWidth = window.innerWidth;
+        const isPortrait = isPortraitMode();
 
-        if (clickX < screenWidth / 2) {
-            previousSlide();
+        if (isPortrait) {
+            if (e.clientY < window.innerHeight / 2) {
+                previousSlide();
+            } else {
+                nextSlide();
+            }
         } else {
-            nextSlide();
+            if (e.clientX < window.innerWidth / 2) {
+                previousSlide();
+            } else {
+                nextSlide();
+            }
         }
     });
 
@@ -81,10 +101,20 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        if (e.clientX < window.innerWidth / 2) {
-            document.body.style.cursor = 'w-resize';
+        const isPortrait = isPortraitMode();
+
+        if (isPortrait) {
+            if (e.clientY < window.innerHeight / 2) {
+                document.body.style.cursor = 'n-resize';
+            } else {
+                document.body.style.cursor = 's-resize';
+            }
         } else {
-            document.body.style.cursor = 'e-resize';
+            if (e.clientX < window.innerWidth / 2) {
+                document.body.style.cursor = 'w-resize';
+            } else {
+                document.body.style.cursor = 'e-resize';
+            }
         }
     });
 
@@ -98,11 +128,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         switch(e.key) {
             case 'ArrowRight':
+            case 'ArrowDown':
             case 'PageDown':
                 nextSlide();
                 handled = true;
                 break;
             case 'ArrowLeft':
+            case 'ArrowUp':
             case 'PageUp':
                 previousSlide();
                 handled = true;
@@ -159,9 +191,15 @@ document.addEventListener('DOMContentLoaded', () => {
         let diffX = touchStartX - touchCurrentX;
         let diffY = touchStartY - touchCurrentY;
 
-        if (Math.abs(diffX) > Math.abs(diffY)) {
-            if (e.cancelable) {
-                e.preventDefault();
+        const isPortrait = isPortraitMode();
+
+        if (isPortrait) {
+            if (Math.abs(diffY) > Math.abs(diffX)) {
+                if (e.cancelable) e.preventDefault();
+            }
+        } else {
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+                if (e.cancelable) e.preventDefault();
             }
         }
     }, { passive: false });
@@ -181,14 +219,29 @@ document.addEventListener('DOMContentLoaded', () => {
         let diffX = startX - endX;
         let diffY = startY - endY;
 
-        if (Math.abs(diffX) > threshold && Math.abs(diffX) > Math.abs(diffY)) {
-            ignoreNextClick = true; 
-            setTimeout(() => { ignoreNextClick = false; }, 300);
+        const isPortrait = isPortraitMode();
 
-            if (diffX > 0) {
-                nextSlide();
-            } else {
-                previousSlide();
+        if (isPortrait) {
+            if (Math.abs(diffY) > threshold && Math.abs(diffY) > Math.abs(diffX)) {
+                ignoreNextClick = true; 
+                setTimeout(() => { ignoreNextClick = false; }, 300);
+
+                if (diffY > 0) {
+                    nextSlide();
+                } else {
+                    previousSlide();
+                }
+            }
+        } else {
+            if (Math.abs(diffX) > threshold && Math.abs(diffX) > Math.abs(diffY)) {
+                ignoreNextClick = true; 
+                setTimeout(() => { ignoreNextClick = false; }, 300);
+
+                if (diffX > 0) {
+                    nextSlide();
+                } else {
+                    previousSlide();
+                }
             }
         }
     }
@@ -198,14 +251,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let wheelTimeout;
 
     document.addEventListener('wheel', (e) => {
-        if (Math.abs(e.deltaX) > Math.abs(e.deltaY) && Math.abs(e.deltaX) > 20) {
+        const isPortrait = isPortraitMode();
+        
+        let targetDelta = isPortrait ? e.deltaY : e.deltaX;
+        let crossDelta = isPortrait ? e.deltaX : e.deltaY;
+
+        if (Math.abs(targetDelta) > Math.abs(crossDelta) && Math.abs(targetDelta) > 20) {
             if (e.cancelable) {
                 e.preventDefault(); 
             }
 
             if (!isWheeling) {
                 isWheeling = true;
-                if (e.deltaX > 0) {
+                if (targetDelta > 0) {
                     nextSlide();
                 } else {
                     previousSlide();
