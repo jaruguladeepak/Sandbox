@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoBin Simulation Demo</title>
+    <link rel="stylesheet" href="css/simulation.css">
+</head>
+<body>
+    <header class="sim-header">
+        <div class="sim-brand">ECOBIN — SMART CITY SIMULATION</div>
+        <div class="sim-controls">
+            <button id="btn-guided" class="btn active">GUIDED MODE</button>
+            <button id="btn-auto" class="btn">AUTO DEMO</button>
+            <a href="../index.html#slide-10" class="btn btn-return">← RETURN TO PRESENTATION</a>
+        </div>
+    </header>
+
+    <div class="sim-container">
+        <!-- Intro Screen -->
+        <div id="stage-0" class="stage-view active">
+            <h1>500 Smart Bins &nbsp;|&nbsp; 5 Collection Vehicles &nbsp;|&nbsp; 1 Central Depot</h1>
+            <p style="margin-top:20px; font-size:20px; color:#9CA3AF;">Select a mode above or click start below.</p>
+            <button id="btn-start" class="btn-primary">[ START SIMULATION ]</button>
+        </div>
+
+        <!-- Stage 1: IoT -->
+        <div id="stage-1" class="stage-view">
+            <h2>Stage 1/5 — IoT Sensing</h2>
+            <div class="layout-split">
+                <div id="map-view-1" class="map-view"></div>
+                <div class="event-stream" id="iot-events">
+                    <h3>Sensor Stream</h3>
+                </div>
+            </div>
+            <button class="btn-next" data-next="2">NEXT: RUN PREDICTION</button>
+        </div>
+
+        <!-- Stage 2: Prediction -->
+        <div id="stage-2" class="stage-view">
+            <h2>Stage 2/5 — ML Prediction</h2>
+            <div class="layout-split">
+                <div class="data-table">
+                    <h3>CURRENT vs TOMORROW</h3>
+                    <div id="prediction-list"></div>
+                </div>
+                <div class="metrics-panel">
+                    <h3>Model: XGBoost Regression</h3>
+                    <p style="color:#9CA3AF; margin-bottom: 15px;">Demo / Simulated Model Metrics</p>
+                    <div class="metric">MAE: 4.2</div>
+                    <div class="metric">RMSE: 5.7</div>
+                    <div class="metric">R²: 0.91</div>
+                </div>
+            </div>
+            <button class="btn-next" data-next="3">NEXT: DETECT OVERFLOW RISK</button>
+        </div>
+
+        <!-- Stage 3: Overflow -->
+        <div id="stage-3" class="stage-view">
+            <h2>Stage 3/5 — Overflow Detection</h2>
+            <div class="layout-split">
+                <div class="critical-bins" id="critical-bins-list">
+                    <h3>CRITICAL THRESHOLD: 80%</h3>
+                </div>
+                <div class="confusion-matrix">
+                    <h3>Evaluation Methodology</h3>
+                    <table>
+                        <tr><td></td><td>ACTUAL SAFE</td><td>ACTUAL CRIT</td></tr>
+                        <tr><td>PRED SAFE</td><td>TN (92%)</td><td>FN (2%)</td></tr>
+                        <tr><td>PRED CRIT</td><td>FP (4%)</td><td>TP (98%)</td></tr>
+                    </table>
+                </div>
+            </div>
+            <button class="btn-next" data-next="4">NEXT: CALCULATE PRIORITY</button>
+        </div>
+
+        <!-- Stage 4: Priority -->
+        <div id="stage-4" class="stage-view">
+            <h2>Stage 4/5 — Priority Engine</h2>
+            <div class="priority-math">
+                <h3>Priority = 0.6F + 0.2P + 0.2A</h3>
+                <div id="priority-animation"></div>
+            </div>
+            <button class="btn-next" data-next="5">NEXT: OPTIMIZE ROUTES</button>
+        </div>
+
+        <!-- Stage 5: Routing -->
+        <div id="stage-5" class="stage-view">
+            <h2>Stage 5/5 — Route Optimization</h2>
+            <div class="layout-split">
+                <div id="map-view-5" class="map-view">
+                    <svg id="route-svg" width="100%" height="100%" style="position:absolute; top:0; left:0; pointer-events:none;"></svg>
+                </div>
+                <div class="routes-info" id="routes-info">
+                    <h3>Route Optimization Simulation (Google OR-Tools)</h3>
+                    <div id="truck-routes"></div>
+                </div>
+            </div>
+            <button class="btn-next" data-next="6">NEXT: VIEW RESULTS</button>
+        </div>
+
+        <!-- Stage 6: Results -->
+        <div id="stage-6" class="stage-view">
+            <h2>Simulation Complete</h2>
+            <div class="results-table">
+                <table>
+                    <tr><th>Metric</th><th>FIXED SYSTEM</th><th>ECOBIN</th></tr>
+                    <tr><td>Bins Visited</td><td>15</td><td>8</td></tr>
+                    <tr><td>Distance</td><td>42 km</td><td>27 km</td></tr>
+                    <tr><td>Overflow</td><td>4</td><td>1</td></tr>
+                    <tr><td>Capacity Usage</td><td>46%</td><td>83%</td></tr>
+                </table>
+                <p class="disclaimer" style="margin-top:15px; color:#9CA3AF;">* Simulation results based on conceptual demo data.</p>
+            </div>
+            <div class="workflow-steps">Sense → Predict → Prioritize → Optimize → Collect</div>
+            <button id="btn-restart" class="btn-primary">[ RESTART ]</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/bins.js"></script>
+    <script src="js/prediction.js"></script>
+    <script src="js/priority.js"></script>
+    <script src="js/routing.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

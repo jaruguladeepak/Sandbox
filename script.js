@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalSlides = slides.length;
     let currentSlide = 0;
 
+    if (window.location.hash && window.location.hash.startsWith('#slide-')) {
+        const hashIndex = parseInt(window.location.hash.replace('#slide-', ''), 10);
+        if (!isNaN(hashIndex) && hashIndex >= 0 && hashIndex < totalSlides) {
+            currentSlide = hashIndex;
+        }
+    }
+
     function isPortraitMode() {
         return window.innerHeight > window.innerWidth;
     }
@@ -47,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function goToSlide(index) {
         if (index >= 0 && index < totalSlides) {
             currentSlide = index;
+            window.history.replaceState(null, null, `#slide-${index}`);
             updateSlides();
         }
     }
