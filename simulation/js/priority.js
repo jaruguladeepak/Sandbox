@@ -17,9 +17,9 @@ function initStage4() {
     
     const mathSteps = [
         `<div class="priority-line" style="color:var(--accent); font-weight:bold; font-size:28px;">${showcaseBin.id}</div>`,
-        `<div class="priority-line">Predicted Fill<br><span style="color:#9CA3AF">${fillScore}% × 0.60 = ${(fillScore*0.6).toFixed(1)}</span></div>`,
-        `<div class="priority-line">Overflow Risk<br><span style="color:#9CA3AF">${probScore}% × 0.20 = ${(probScore*0.2).toFixed(1)}</span></div>`,
-        `<div class="priority-line">Area Priority<br><span style="color:#9CA3AF">${areaScore}% × 0.20 = ${(areaScore*0.2).toFixed(1)}</span></div>`,
+        `<div class="priority-line">Predicted Fill<br><span style="color:#6B7280">${fillScore}% × 0.60 = ${(fillScore*0.6).toFixed(1)}</span></div>`,
+        `<div class="priority-line">Overflow Risk<br><span style="color:#6B7280">${probScore}% × 0.20 = ${(probScore*0.2).toFixed(1)}</span></div>`,
+        `<div class="priority-line">Area Priority<br><span style="color:#6B7280">${areaScore}% × 0.20 = ${(areaScore*0.2).toFixed(1)}</span></div>`,
         `<div class="priority-line crit">Priority = ${((fillScore*0.6) + (probScore*0.2) + (areaScore*0.2)).toFixed(1)}%<br>COLLECTION REQUIRED</div>`
     ];
     
