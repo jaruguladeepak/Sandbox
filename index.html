@@ -70,35 +70,37 @@
         <!-- Slide 2: Introduction -->
         <div class="slide">
             <div class="top-tab"></div>
-            <div class="slide-content layout-two-col" style="gap: 60px; padding: 80px;">
-                <div class="col-left" style="display: flex; flex-direction: column; justify-content: center;">
-                    <h2 class="slide-title" style="margin-bottom: 40px; font-size: 38px;">Introduction & Problem Context</h2>
-                    <h4 class="accent-text mt-20" style="font-size: 28px; margin-bottom: 20px;">The Problem</h4>
-                    <p class="description" style="font-size: 22px; line-height: 1.6; margin-bottom: 30px;">Traditional waste collection generally follows <strong>fixed
+            <div class="slide-content" style="display: grid; grid-template-columns: 45% 55%; gap: 50px; padding: 8% 5.2%;">
+                <div class="col-left" style="display: flex; flex-direction: column; justify-content: flex-start; font-size: 1.15em;">
+                    <h2 class="slide-title" style="font-size: 40px; margin-bottom: 25px;">Introduction & Problem Context</h2>
+                    <h4 class="accent-text mt-20" style="font-size: 26px;">The Problem</h4>
+                    <p class="description" style="font-size: 21px; line-height: 1.6; margin-bottom: 20px;">Traditional waste collection generally follows <strong>fixed
                             schedules</strong>, regardless of the actual fill level of individual bins. This can result
                         in:</p>
-                    <ul class="custom-list" style="font-size: 22px; line-height: 1.8; padding-left: 30px;">
-                        <li style="margin-bottom: 18px;"><strong>Premature collection</strong> of partially filled bins</li>
-                        <li style="margin-bottom: 18px;"><strong>Overflow</strong> of high-demand bins before scheduled pickup</li>
-                        <li style="margin-bottom: 18px;">Unnecessary collection trips and travel distance</li>
-                        <li style="margin-bottom: 18px;">Inefficient utilization of collection vehicles</li>
-                        <li style="margin-bottom: 18px;">Limited visibility into future waste accumulation</li>
+                    <ul class="custom-list" style="font-size: 21px; line-height: 1.8;">
+                        <li><strong>Premature collection</strong> of partially filled bins</li>
+                        <li><strong>Overflow</strong> of high-demand bins before scheduled pickup</li>
+                        <li>Unnecessary collection trips and travel distance</li>
+                        <li>Inefficient utilization of collection vehicles</li>
+                        <li>Limited visibility into future waste accumulation</li>
                     </ul>
                 </div>
-                <div class="col-right" style="display: flex; flex-direction: column; justify-content: center;">
-                    <div class="card-box" style="padding: 50px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                        <h4 class="accent-text" style="font-size: 28px; margin-bottom: 25px;">Our Solution — EcoBin</h4>
-                        <p class="description" style="font-size: 22px; line-height: 1.6; margin-bottom: 30px;">EcoBin is an intelligent waste-management system that combines
+                <div class="col-right" style="display: flex; flex-direction: column; justify-content: flex-start;">
+                    <div class="card-box" style="padding: 40px; display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                        <h4 class="accent-text" style="font-size: 26px; margin-bottom: 20px;">Our Solution — EcoBin</h4>
+                        <p class="description" style="font-size: 21px; line-height: 1.6;">EcoBin is an intelligent waste-management system that combines
                             <strong>IoT sensing, machine learning, and route optimization</strong> to support
                             demand-driven waste collection.
                         </p>
-                        <div class="flow-diagram" style="font-size: 20px; line-height: 2; color: var(--primary-accent); font-weight: 800; background: var(--bg-color); padding: 25px; border-radius: 8px; border: 1px solid var(--border-color);">
+                        
+                        <div class="flow-diagram" style="margin: 25px 0; padding: 22px; border-radius: 8px; border: 1px dashed var(--primary-accent); background: var(--bg-color); color: var(--primary-accent); font-weight: bold; line-height: 1.6; font-size: 19px;">
                             IoT Sensors &rarr; Waste Data &rarr; ML Prediction &rarr; Overflow Risk &rarr; Priority Selection &rarr; Route Optimization &rarr; Smart Collection
                         </div>
-                    </div>
-                    <div class="quote-box mt-20" style="padding: 30px; font-size: 24px; line-height: 1.6; border-left-width: 4px;">
-                        Instead of asking <strong>“Which bins are scheduled today?”</strong>, EcoBin asks <strong>“Which
+                        
+                        <div class="quote-box" style="border: none; border-left: 4px solid var(--primary-accent); background: transparent; padding-left: 20px; font-size: 21px; line-height: 1.5; margin-top: 10px;">
+                            Instead of asking <strong>“Which bins are scheduled today?”</strong>, EcoBin asks <strong>“Which
                             bins actually need collection, and what is the most efficient way to collect them?”</strong>
+                        </div>
                     </div>
                 </div>
             </div>

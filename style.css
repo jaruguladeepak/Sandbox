@@ -21,7 +21,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100dvh; /* use dvh for mobile */
+    min-height: 100dvh;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -30,10 +31,12 @@ body {
 
 .presentation-container {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 1440px;
+    height: 810px;
     background: transparent;
     overflow: hidden;
+    transform-origin: center center;
+    /* scaling will be applied via javascript */
 }
 
 .slide {
@@ -43,12 +46,17 @@ body {
     width: 100%;
     height: 100%;
     background: var(--slide-bg);
-    display: none;
+    opacity: 0;
+    visibility: hidden;
     z-index: 1;
+    border: 10px solid var(--primary-accent);
+    box-sizing: border-box;
+    transition: opacity 250ms ease, visibility 250ms ease;
 }
 
 .slide.active {
-    display: block;
+    opacity: 1;
+    visibility: visible;
     z-index: 2;
 }
 
