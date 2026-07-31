@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoBin - Review 2 Presentation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .progress-bar-container {
+            width: 100%;
+            background-color: var(--surface-2);
+            border-radius: 8px;
+            margin: 10px 0 20px 0;
+            overflow: hidden;
+            height: 24px;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background-color: var(--primary-accent);
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .status-completed { background-color: rgba(5, 150, 105, 0.2); color: #10b981; }
+        .status-inprogress { background-color: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+        .status-pending { background-color: rgba(107, 114, 128, 0.2); color: #9ca3af; }
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .flow-box {
+            background: var(--surface-1);
+            border: 1px solid var(--border-color);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        .flow-arrow {
+            color: var(--primary-accent);
+            font-size: 24px;
+        }
+        .db-table {
+            background: var(--surface-1);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .db-title {
+            color: var(--primary-accent);
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 22px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        .db-field {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .db-type { color: #9ca3af; font-family: monospace; }
+        .folder-structure {
+            font-family: monospace;
+            font-size: 20px;
+            line-height: 1.8;
+            background: var(--surface-1);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+        .folder { color: var(--primary-accent); font-weight: bold; }
+        .file { color: var(--text-secondary); }
+    </style>
+</head>
+
+<body>
+    <div class="presentation-container">
+
+        <!-- Slide 1: Title -->
+        <div class="slide active no-padding">
+            <div class="layout-split-hero">
+                <div class="hero-left-panel">
+                    <p class="hero-review-label">PROJECT REVIEW 02</p>
+                    <h1 class="hero-title-main">EcoBin</h1>
+                    <p class="hero-subtitle">Smart Waste Fill-Level Prediction<br>& Intelligent Route Optimization
+                        System</p>
+                    <p class="hero-domain">IoT &nbsp;&bull;&nbsp; Machine Learning &nbsp;&bull;&nbsp; Route Optimization
+                    </p>
+
+                    <div class="hero-divider"></div>
+
+                    <p class="hero-section-title">PROJECT TEAM</p>
+                    <div class="team-grid-2x2">
+                        <div>
+                            <p class="team-member-name">Jarugula Deepak</p>
+                            <p class="team-member-id">24WU0104024</p>
+                        </div>
+                        <div>
+                            <p class="team-member-name">Bakka Eekshitha Reddy</p>
+                            <p class="team-member-id">24WU0104006</p>
+                        </div>
+                        <div>
+                            <p class="team-member-name">Chadalavada Harsha Sai</p>
+                            <p class="team-member-id">24WU0104005</p>
+                        </div>
+                        <div>
+                            <p class="team-member-name">Amrutham Akshaya</p>
+                            <p class="team-member-id">24WU0104016</p>
+                        </div>
+                        <div>
+                            <p class="team-member-name">Leena Chekuri</p>
+                            <p class="team-member-id">24WU0102043</p>
+                        </div>
+                    </div>
+
+                    <p class="hero-section-title">MENTOR</p>
+                    <p class="mentor-name">Prof. Sanjay Prasad Rao</p>
+                    <p class="mentor-desc">School of Technology &bull; Woxsen University</p>
+
+                    <div class="hero-divider"></div>
+
+                    <p style="margin-top: 10px; margin-bottom: 25px; color: var(--text-secondary); font-size: 1.15em; font-weight: 500;">From Concept to Working Prototype</p>
+
+                    <div class="hero-footer">
+                        DESIGN &nbsp;&rarr;&nbsp; IMPLEMENT &nbsp;&rarr;&nbsp; VALIDATE
+                        &nbsp;&rarr;&nbsp; <span class="accent">INTEGRATE</span>
+                    </div>
+                </div>
+                <div class="image-panel">
+                    <img src="../shared/assets/implementation-collage.png"
+                        alt="Implementation Collage">
+                    <div class="image-overlay"></div>
+                    <div class="image-gradient"></div>
+                    <div class="slide-number">01 / 15</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Project Progress Since Review 01 -->
+        <div class="slide">
+            <div class="top-tab"></div>
+            <div class="slide-content" style="padding: 2.5% 5%;">
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <h2 class="slide-title" style="font-size: 34px; margin-bottom: 5px;">Project Progress Since Review 01</h2>
+                    <p style="color: var(--primary-accent); font-size: 18px; font-weight: 500;">From Conceptual Design to System Development</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px;">
+                    <div class="card-box" style="padding: 15px 20px; margin-bottom: 0;">
+                        <h4 class="accent-text" style="font-size: 18px; margin-bottom: 10px; text-align: center;">Review 1 Achievements</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; font-size: 15px; line-height: 1.6;">
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">✓</span> Problem Analysis</li>
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">✓</span> Literature Review</li>
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">✓</span> Architecture</li>
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">✓</span> Tech Stack</li>
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">✓</span> Methodology</li>
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">✓</span> Simulation</li>
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">✓</span> GitHub</li>
+                        </ul>
+                    </div>
+                    <div class="card-box" style="padding: 15px 20px; margin-bottom: 0; border-color: var(--primary-accent);">
+                        <h4 class="accent-text" style="font-size: 18px; margin-bottom: 10px; text-align: center;">Current Progress</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; font-size: 15px; line-height: 1.6;">
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">✓</span> Repository</li>
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">✓</span> Frontend</li>
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">✓</span> Backend</li>
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">✓</span> Database</li>
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">✓</span> ML Pipeline</li>
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">✓</span> Dashboard</li>
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">✓</span> Integration</li>
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="margin-right: 8px;">🚧</span> Hardware</li>
+                            <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="margin-right: 8px;">🚧</span> Model Training</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 15px; text-align: center;">
+                    <div class="flowchart" style="flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 10px; font-size: 14px;">
+                        <div class="flow-box" style="padding: 6px 12px; width: auto; font-size: 15px; margin-top: 0;">Planning</div>
+                        <div class="flow-arrow" style="font-size: 18px;">&rarr;</div>
+                        <div class="flow-box" style="padding: 6px 12px; width: auto; font-size: 15px; margin-top: 0; border-color: var(--primary-accent);">Development</div>
+                        <div class="flow-arrow" style="font-size: 18px;">&rarr;</div>
+                        <div class="flow-box" style="padding: 6px 12px; width: auto; font-size: 15px; margin-top: 0; border-color: var(--primary-accent);">Integration</div>
+                        <div class="flow-arrow" style="font-size: 18px;">&rarr;</div>
+                        <div class="flow-box" style="padding: 6px 12px; width: auto; font-size: 15px; margin-top: 0;">Testing</div>
+                        <div class="flow-arrow" style="font-size: 18px;">&rarr;</div>
+                        <div class="flow-box" style="padding: 6px 12px; width: auto; font-size: 15px; margin-top: 0;">Deployment</div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 15px; text-align: center;">
+                    <div class="flowchart" style="flex-direction: row; justify-content: center; gap: 15px; font-size: 14px;">
+                        <div style="text-align: center;">
+                            <div style="color: var(--text-secondary); font-weight: bold; margin-bottom: 3px;">Review 01</div>
+                            <div class="flow-box" style="padding: 6px 12px; width: auto; font-size: 14px; font-weight: normal; margin-top: 0;">Planning &amp; Design</div>
+                        </div>
+                        <div class="flow-arrow" style="font-size: 20px; align-self: flex-end; margin-bottom: 6px;">&rarr;</div>
+                        <div style="text-align: center;">
+                            <div style="color: var(--primary-accent); font-weight: bold; margin-bottom: 3px;">Review 02</div>
+                            <div class="flow-box" style="padding: 6px 12px; width: auto; font-size: 14px; font-weight: normal; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.1); margin-top: 0;">Implementation &amp; Integration</div>
+                        </div>
+                        <div class="flow-arrow" style="font-size: 20px; align-self: flex-end; margin-bottom: 6px;">&rarr;</div>
+                        <div style="text-align: center;">
+                            <div style="color: var(--text-secondary); font-weight: bold; margin-bottom: 3px;">Review 03</div>
+                            <div class="flow-box" style="padding: 6px 12px; width: auto; font-size: 14px; font-weight: normal; margin-top: 0;">Testing &amp; Evaluation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-box" style="padding: 12px 20px; margin-bottom: 0; background: rgba(5, 150, 105, 0.05); border-left: 4px solid var(--primary-accent);">
+                    <h4 class="accent-text" style="font-size: 15px; margin-bottom: 6px;">CURRENT MILESTONE</h4>
+                    <p style="font-size: 15px; line-height: 1.4; color: var(--text-secondary);">The project has successfully transitioned from conceptual design to implementation. The focus of Review 02 is developing and integrating the core modules of EcoBin, including IoT sensing, machine learning, backend services, and route optimization.</p>
+                </div>
+            </div>
+            <div class="slide-number">02 / 15</div>
+        </div>
+
+        <!-- Slide 3: System Architecture & Module Design -->
+        <div class="slide">
+            <div class="top-tab-right"></div>
+            <div class="slide-content" style="padding: 1% 4%;">
+                <div style="text-align: center; margin-bottom: 5px;">
+                    <h2 class="slide-title" style="font-size: 32px; margin-bottom: 2px;">System Architecture &amp; Module Design</h2>
+                    <p style="color: var(--primary-accent); font-size: 16px; font-weight: 500;">Implementation Architecture of the EcoBin Smart Waste Management System</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 22% 56% 22%; gap: 15px; margin-bottom: 8px; align-items: stretch;">
+                    
+                    <!-- Left Column: Core Modules -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0;">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">Core Modules</h4>
+                        <table style="width: 100%; font-size: 13px; border-collapse: separate; border-spacing: 0 6px;">
+                            <tr><td style="color: var(--text-secondary); font-weight: 500;">IoT Hardware</td><td style="text-align: right;"><span style="background: rgba(5, 150, 105, 0.15); color: #059669; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 11px; white-space: nowrap;">✅ Designed</span></td></tr>
+                            <tr><td style="color: var(--text-secondary); font-weight: 500;">Backend API</td><td style="text-align: right;"><span style="background: rgba(245, 158, 11, 0.15); color: #d97706; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 11px; white-space: nowrap;">🚧 Development</span></td></tr>
+                            <tr><td style="color: var(--text-secondary); font-weight: 500;">Database</td><td style="text-align: right;"><span style="background: rgba(5, 150, 105, 0.15); color: #059669; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 11px; white-space: nowrap;">✅ Designed</span></td></tr>
+                            <tr><td style="color: var(--text-secondary); font-weight: 500;">ML Pipeline</td><td style="text-align: right;"><span style="background: rgba(245, 158, 11, 0.15); color: #d97706; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 11px; white-space: nowrap;">🚧 Development</span></td></tr>
+                            <tr><td style="color: var(--text-secondary); font-weight: 500;">Route Opt.</td><td style="text-align: right;"><span style="background: rgba(245, 158, 11, 0.15); color: #d97706; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 11px; white-space: nowrap;">🚧 Development</span></td></tr>
+                            <tr><td style="color: var(--text-secondary); font-weight: 500;">Dashboard</td><td style="text-align: right;"><span style="background: rgba(245, 158, 11, 0.15); color: #d97706; padding: 2px 6px; border-radius: 4px; font-weight: bold; font-size: 11px; white-space: nowrap;">🚧 Development</span></td></tr>
+                        </table>
+                    </div>
+
+                    <!-- Center Column: SYSTEM ARCHITECTURE -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0; display: flex; flex-direction: column; align-items: center; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.02);">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 5px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; width: 100%;">SYSTEM ARCHITECTURE</h4>
+                        
+                        <div class="flowchart" style="width: 100%; font-size: 12px; gap: 2px;">
+                            <div class="flow-box" style="padding: 4px 10px; width: 220px; font-size: 13px; margin-top: 0; background: var(--slide-bg);">
+                                <strong style="color: var(--primary-accent);">SMART BIN</strong><br><span style="font-size: 11px; font-weight: normal; color: var(--text-secondary);">ESP32 + Ultrasonic Sensor</span>
+                            </div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 4px 10px; width: 220px; font-size: 13px; margin-top: 0; background: var(--slide-bg);">
+                                <strong>IoT Data Collection</strong>
+                            </div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 4px 10px; width: 220px; font-size: 13px; margin-top: 0; background: var(--slide-bg);">
+                                <strong>Backend API</strong><br><span style="font-size: 11px; font-weight: normal; color: var(--text-secondary);">FastAPI</span>
+                            </div>
+                            
+                            <!-- Branching SVG -->
+                            <svg width="370" height="12" viewBox="0 0 370 12" style="display: block; margin: 1px 0;">
+                                <line x1="185" y1="0" x2="185" y2="12" stroke="var(--primary-accent)" stroke-width="2" />
+                                <line x1="55" y1="5" x2="315" y2="5" stroke="var(--primary-accent)" stroke-width="2" />
+                                <line x1="55" y1="5" x2="55" y2="12" stroke="var(--primary-accent)" stroke-width="2" />
+                                <line x1="315" y1="5" x2="315" y2="12" stroke="var(--primary-accent)" stroke-width="2" />
+                                <polygon points="51,8 59,8 55,12" fill="var(--primary-accent)" />
+                                <polygon points="181,8 189,8 185,12" fill="var(--primary-accent)" />
+                                <polygon points="311,8 319,8 315,12" fill="var(--primary-accent)" />
+                            </svg>
+                            
+                            <div style="display: flex; gap: 15px; justify-content: center; width: 100%;">
+                                <div class="flow-box" style="padding: 4px 5px; width: 110px; font-size: 12px; margin-top: 0; background: var(--slide-bg);">
+                                    <strong>Database</strong><br><span style="font-size: 10px; font-weight: normal; color: var(--text-secondary);">PostgreSQL</span>
+                                </div>
+                                <div class="flow-box" style="padding: 4px 5px; width: 110px; font-size: 12px; margin-top: 0; background: var(--slide-bg);">
+                                    <strong>ML Prediction</strong><br><span style="font-size: 10px; font-weight: normal; color: var(--text-secondary);">XGBoost</span>
+                                </div>
+                                <div class="flow-box" style="padding: 4px 5px; width: 110px; font-size: 12px; margin-top: 0; background: var(--slide-bg);">
+                                    <strong>Priority Engine</strong><br><span style="font-size: 10px; font-weight: normal; color: var(--text-secondary);">Risk Analysis</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Merging SVG -->
+                            <svg width="370" height="12" viewBox="0 0 370 12" style="display: block; margin: 1px 0;">
+                                <line x1="185" y1="0" x2="185" y2="12" stroke="var(--primary-accent)" stroke-width="2" />
+                                <line x1="55" y1="7" x2="315" y2="7" stroke="var(--primary-accent)" stroke-width="2" />
+                                <line x1="55" y1="0" x2="55" y2="7" stroke="var(--primary-accent)" stroke-width="2" />
+                                <line x1="315" y1="0" x2="315" y2="7" stroke="var(--primary-accent)" stroke-width="2" />
+                                <polygon points="181,8 189,8 185,12" fill="var(--primary-accent)" />
+                            </svg>
+                            
+                            <div class="flow-box" style="padding: 4px 10px; width: 220px; font-size: 13px; margin-top: 0; background: var(--slide-bg);">
+                                <strong>Route Optimization</strong><br><span style="font-size: 11px; font-weight: normal; color: var(--text-secondary);">Google OR-Tools - CVRP</span>
+                            </div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 4px 10px; width: 220px; font-size: 13px; margin-top: 0; background: var(--slide-bg);">
+                                <strong>React Dashboard &amp; Map</strong>
+                            </div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 4px 10px; width: 220px; font-size: 13px; margin-top: 0; border-color: var(--primary-accent); background: var(--slide-bg);">
+                                <strong style="color: var(--primary-accent);">Collection Vehicle Routes</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Technologies -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0;">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">Technologies</h4>
+                        <div style="font-size: 13px; line-height: 1.4;">
+                            <div style="margin-bottom: 6px;">
+                                <strong style="color: var(--text-primary);">IoT Layer</strong><br>
+                                <span style="color: var(--text-secondary);">ESP32, Ultrasonic Sensor</span>
+                            </div>
+                            <div style="margin-bottom: 6px;">
+                                <strong style="color: var(--text-primary);">Backend</strong><br>
+                                <span style="color: var(--text-secondary);">FastAPI, Python</span>
+                            </div>
+                            <div style="margin-bottom: 6px;">
+                                <strong style="color: var(--text-primary);">Database</strong><br>
+                                <span style="color: var(--text-secondary);">PostgreSQL, SQLAlchemy</span>
+                            </div>
+                            <div style="margin-bottom: 6px;">
+                                <strong style="color: var(--text-primary);">Machine Learning</strong><br>
+                                <span style="color: var(--text-secondary);">Pandas, Scikit-learn, XGBoost</span>
+                            </div>
+                            <div style="margin-bottom: 6px;">
+                                <strong style="color: var(--text-primary);">Optimization</strong><br>
+                                <span style="color: var(--text-secondary);">Google OR-Tools</span>
+                            </div>
+                            <div>
+                                <strong style="color: var(--text-primary);">Frontend</strong><br>
+                                <span style="color: var(--text-secondary);">React, TypeScript, Leaflet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-box" style="padding: 10px 20px; margin-bottom: 0; background: rgba(5, 150, 105, 0.05); border-left: 4px solid var(--primary-accent);">
+                    <h4 class="accent-text" style="font-size: 14px; margin-bottom: 4px;">Implementation Strategy</h4>
+                    <p style="font-size: 14px; line-height: 1.4; color: var(--text-secondary);">EcoBin follows a modular architecture where each component performs a specific function. Sensor data collected from IoT devices is processed through the backend, stored in the database, analyzed using machine learning, prioritized based on overflow risk, optimized using CVRP, and finally visualized through an interactive dashboard.</p>
+                </div>
+            </div>
+            <div class="slide-number">03 / 15</div>
+        </div>
+
+        <!-- Slide 4: Complete System Workflow -->
+        <div class="slide">
+            <div class="top-tab"></div>
+            <div class="slide-content" style="padding: 1% 4%;">
+                <div style="text-align: center; margin-bottom: 5px;">
+                    <h2 class="slide-title" style="font-size: 32px; margin-bottom: 2px;">Complete System Workflow</h2>
+                    <p style="color: var(--primary-accent); font-size: 16px; font-weight: 500;">End-to-End Data Flow of the EcoBin Smart Waste Management System</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 22% 56% 22%; gap: 15px; margin-bottom: 8px; align-items: stretch;">
+                    
+                    <!-- Left Column: Input Data -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0;">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 15px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">INPUT DATA</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                            <li style="margin-bottom: 10px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Bin ID</li>
+                            <li style="margin-bottom: 10px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Fill Level</li>
+                            <li style="margin-bottom: 10px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Timestamp</li>
+                            <li style="margin-bottom: 10px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> GPS Location</li>
+                            <li style="margin-bottom: 10px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Distance</li>
+                            <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Device Status</li>
+                        </ul>
+                    </div>
+
+                    <!-- Center Column: SYSTEM WORKFLOW -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0; display: flex; flex-direction: column; align-items: center; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.02);">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 5px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; width: 100%;">SYSTEM WORKFLOW</h4>
+                        
+                        <div class="flowchart" style="width: 100%; font-size: 12px; gap: 2px;">
+                            <div class="flow-box" style="padding: 3px 10px; width: 220px; font-size: 13px; margin-top: 0; background: var(--slide-bg);">
+                                <strong style="color: var(--primary-accent);">Smart Bin</strong><br><span style="font-size: 11px; font-weight: normal; color: var(--text-secondary);">ESP32 + Ultrasonic</span>
+                            </div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            
+                            <div class="flow-box" style="padding: 3px 10px; width: 220px; font-size: 13px; margin-top: 0; background: var(--slide-bg);">
+                                <strong>Sensor Data</strong><br><span style="font-size: 11px; font-weight: normal; color: var(--text-secondary);">Fill Level, Timestamp, GPS</span>
+                            </div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            
+                            <div class="flow-box" style="padding: 3px 10px; width: 220px; font-size: 13px; margin-top: 0; background: var(--slide-bg);">
+                                <strong>Backend API</strong><br><span style="font-size: 11px; font-weight: normal; color: var(--text-secondary);">FastAPI</span>
+                            </div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            
+                            <div class="flow-box" style="padding: 3px 10px; width: 220px; font-size: 13px; margin-top: 0; background: var(--slide-bg);">
+                                <strong>Database</strong><br><span style="font-size: 11px; font-weight: normal; color: var(--text-secondary);">PostgreSQL</span>
+                            </div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            
+                            <div class="flow-box" style="padding: 3px 10px; width: 220px; font-size: 13px; margin-top: 0; background: var(--slide-bg);">
+                                <strong>Feature Engineering</strong><br><span style="font-size: 11px; font-weight: normal; color: var(--text-secondary);">Cleaning &amp; Roll Avg</span>
+                            </div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            
+                            <div class="flow-box" style="padding: 3px 10px; width: 220px; font-size: 13px; margin-top: 0; background: var(--slide-bg);">
+                                <strong>Machine Learning</strong><br><span style="font-size: 11px; font-weight: normal; color: var(--text-secondary);">XGBoost Prediction</span>
+                            </div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            
+                            <div class="flow-box" style="padding: 3px 10px; width: 220px; font-size: 13px; margin-top: 0; background: var(--slide-bg);">
+                                <strong>Priority Engine</strong><br><span style="font-size: 11px; font-weight: normal; color: var(--text-secondary);">Risk Analysis</span>
+                            </div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            
+                            <div class="flow-box" style="padding: 3px 10px; width: 220px; font-size: 13px; margin-top: 0; background: var(--slide-bg);">
+                                <strong>Route Optimization</strong><br><span style="font-size: 11px; font-weight: normal; color: var(--text-secondary);">OR-Tools CVRP</span>
+                            </div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            
+                            <div class="flow-box" style="padding: 3px 10px; width: 220px; font-size: 13px; margin-top: 0; border-color: var(--primary-accent); background: var(--slide-bg);">
+                                <strong style="color: var(--primary-accent);">Dashboard &amp; Collection</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: System Output -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0;">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 15px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">SYSTEM OUTPUT</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8;">
+                            <li style="margin-bottom: 10px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Predicted Fill Level</li>
+                            <li style="margin-bottom: 10px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Overflow Risk</li>
+                            <li style="margin-bottom: 10px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Priority Score</li>
+                            <li style="margin-bottom: 10px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Optimized Route</li>
+                            <li style="margin-bottom: 10px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Dashboard Map</li>
+                            <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Collection Plan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-box" style="padding: 8px 15px; margin-bottom: 8px; background: rgba(5, 150, 105, 0.05); border-left: 4px solid var(--primary-accent);">
+                    <p style="font-size: 14px; line-height: 1.4; color: var(--text-secondary); text-align: center;">EcoBin transforms raw IoT sensor readings into actionable collection decisions through a sequential workflow involving data acquisition, storage, machine learning prediction, priority analysis, route optimization, and dashboard visualization.</p>
+                </div>
+                
+                <div class="flowchart" style="flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 8px; font-size: 11px; padding-bottom: 5px;">
+                    <div class="flow-box" style="padding: 4px 10px; width: auto; font-size: 11px; margin-top: 0; font-weight: bold; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.1);">SENSE</div>
+                    <div class="flow-arrow" style="font-size: 16px; align-self: center;">&rarr;</div>
+                    <div class="flow-box" style="padding: 4px 10px; width: auto; font-size: 11px; margin-top: 0; font-weight: bold; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.1);">STORE</div>
+                    <div class="flow-arrow" style="font-size: 16px; align-self: center;">&rarr;</div>
+                    <div class="flow-box" style="padding: 4px 10px; width: auto; font-size: 11px; margin-top: 0; font-weight: bold; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.1);">PREDICT</div>
+                    <div class="flow-arrow" style="font-size: 16px; align-self: center;">&rarr;</div>
+                    <div class="flow-box" style="padding: 4px 10px; width: auto; font-size: 11px; margin-top: 0; font-weight: bold; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.1);">PRIORITIZE</div>
+                    <div class="flow-arrow" style="font-size: 16px; align-self: center;">&rarr;</div>
+                    <div class="flow-box" style="padding: 4px 10px; width: auto; font-size: 11px; margin-top: 0; font-weight: bold; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.1);">OPTIMIZE</div>
+                    <div class="flow-arrow" style="font-size: 16px; align-self: center;">&rarr;</div>
+                    <div class="flow-box" style="padding: 4px 10px; width: auto; font-size: 11px; margin-top: 0; font-weight: bold; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.1);">VISUALIZE</div>
+                </div>
+            </div>
+            <div class="slide-number">04 / 15</div>
+        </div>
+
+        <!-- Slide 5: Project Implementation & Repository Structure -->
+        <div class="slide">
+            <div class="top-tab-right"></div>
+            <div class="slide-content" style="padding: 1% 4%;">
+                <div style="text-align: center; margin-bottom: 5px;">
+                    <h2 class="slide-title" style="font-size: 32px; margin-bottom: 2px;">Project Implementation &amp; Repository Structure</h2>
+                    <p style="color: var(--primary-accent); font-size: 16px; font-weight: 500;">Organized Development Architecture of the EcoBin System</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 24% 48% 24%; gap: 15px; margin-bottom: 8px; align-items: stretch;">
+                    
+                    <!-- Left Column: Development Phases -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0;">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">Development Phases</h4>
+                        <div style="font-size: 13px; line-height: 1.4;">
+                            <div style="margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 6px;">
+                                <strong style="color: var(--text-primary);">PHASE 1</strong><br>
+                                <span style="color: var(--text-secondary);">System Design</span><br>
+                                <span style="color: #059669; font-weight: bold; font-size: 11px;">✔ Completed</span>
+                            </div>
+                            <div style="margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 6px;">
+                                <strong style="color: var(--text-primary);">PHASE 2</strong><br>
+                                <span style="color: var(--text-secondary);">Project Structure</span><br>
+                                <span style="color: #059669; font-weight: bold; font-size: 11px;">✔ Completed</span>
+                            </div>
+                            <div style="margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 6px;">
+                                <strong style="color: var(--text-primary);">PHASE 3</strong><br>
+                                <span style="color: var(--text-secondary);">Module Development</span><br>
+                                <span style="color: #d97706; font-weight: bold; font-size: 11px;">🚧 In Progress</span>
+                            </div>
+                            <div style="margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 6px;">
+                                <strong style="color: var(--text-primary);">PHASE 4</strong><br>
+                                <span style="color: var(--text-secondary);">System Integration</span><br>
+                                <span style="color: #6B7280; font-weight: bold; font-size: 11px;">⏳ Upcoming</span>
+                            </div>
+                            <div>
+                                <strong style="color: var(--text-primary);">PHASE 5</strong><br>
+                                <span style="color: var(--text-secondary);">Testing &amp; Evaluation</span><br>
+                                <span style="color: #6B7280; font-weight: bold; font-size: 11px;">⏳ Planned</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Center Column: Repository Structure -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.02);">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 5px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">EcoBin Repository Structure</h4>
+                        <pre style="font-family: 'Courier New', Courier, monospace; font-size: 12px; color: var(--text-secondary); line-height: 1.15; overflow: hidden; padding-left: 30px; margin: 0;">
+<strong>EcoBin/</strong>
+│
+├── <strong style="color: var(--primary-accent);">backend/</strong>
+│   ├── api/
+│   ├── services/
+│   └── models/
+│
+├── <strong style="color: var(--primary-accent);">frontend/</strong>
+│   ├── dashboard/
+│   ├── components/
+│   └── pages/
+│
+├── <strong style="color: var(--primary-accent);">ml/</strong>
+│   ├── dataset/
+│   ├── preprocessing/
+│   └── training/
+│
+├── <strong style="color: var(--primary-accent);">optimization/</strong>
+│   ├── cvrp/
+│   └── routing/
+│
+├── <strong style="color: var(--primary-accent);">hardware/</strong>
+│   ├── esp32/
+│   └── sensors/
+│
+├── <strong style="color: var(--primary-accent);">database/</strong>
+│   ├── schema/
+│   └── migrations/
+│
+├── <strong style="color: var(--primary-accent);">presentation/</strong>
+│   └── review-2/
+│
+└── <strong>docs/</strong></pre>
+                    </div>
+
+                    <!-- Right Column: Core Modules -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0;">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">Core Modules</h4>
+                        <div style="font-size: 13px; line-height: 1.4;">
+                            <div style="margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 6px;">
+                                <strong style="color: var(--text-primary);">Frontend</strong><br>
+                                <span style="color: var(--text-secondary);">React Dashboard</span>
+                            </div>
+                            <div style="margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 6px;">
+                                <strong style="color: var(--text-primary);">Backend</strong><br>
+                                <span style="color: var(--text-secondary);">FastAPI REST APIs</span>
+                            </div>
+                            <div style="margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 6px;">
+                                <strong style="color: var(--text-primary);">Database</strong><br>
+                                <span style="color: var(--text-secondary);">PostgreSQL</span>
+                            </div>
+                            <div style="margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 6px;">
+                                <strong style="color: var(--text-primary);">Machine Learning</strong><br>
+                                <span style="color: var(--text-secondary);">XGBoost</span>
+                            </div>
+                            <div style="margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 6px;">
+                                <strong style="color: var(--text-primary);">Optimization</strong><br>
+                                <span style="color: var(--text-secondary);">Google OR-Tools</span>
+                            </div>
+                            <div style="margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 6px;">
+                                <strong style="color: var(--text-primary);">Hardware</strong><br>
+                                <span style="color: var(--text-secondary);">ESP32 + Ultrasonic Sensor</span>
+                            </div>
+                            <div>
+                                <strong style="color: var(--text-primary);">Documentation</strong><br>
+                                <span style="color: var(--text-secondary);">Reports, GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Progress Bar -->
+                <div class="card-box" style="padding: 10px 20px; margin-bottom: 8px; display: flex; flex-direction: column;">
+                    <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center;">Overall Project Progress</h4>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 40px; font-size: 13px;">
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="width: 120px; color: var(--text-secondary);">Architecture</span>
+                            <div style="flex-grow: 1; background: #e5e7eb; height: 10px; border-radius: 5px; margin: 0 15px; overflow: hidden;">
+                                <div style="width: 100%; height: 100%; background: var(--primary-accent);"></div>
+                            </div>
+                            <span style="font-weight: bold; width: 40px; text-align: right;">100%</span>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="width: 120px; color: var(--text-secondary);">Repository</span>
+                            <div style="flex-grow: 1; background: #e5e7eb; height: 10px; border-radius: 5px; margin: 0 15px; overflow: hidden;">
+                                <div style="width: 100%; height: 100%; background: var(--primary-accent);"></div>
+                            </div>
+                            <span style="font-weight: bold; width: 40px; text-align: right;">100%</span>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="width: 120px; color: var(--text-secondary);">Frontend</span>
+                            <div style="flex-grow: 1; background: #e5e7eb; height: 10px; border-radius: 5px; margin: 0 15px; overflow: hidden;">
+                                <div style="width: 70%; height: 100%; background: var(--primary-accent);"></div>
+                            </div>
+                            <span style="font-weight: bold; width: 40px; text-align: right;">70%</span>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="width: 120px; color: var(--text-secondary);">Backend</span>
+                            <div style="flex-grow: 1; background: #e5e7eb; height: 10px; border-radius: 5px; margin: 0 15px; overflow: hidden;">
+                                <div style="width: 60%; height: 100%; background: var(--primary-accent);"></div>
+                            </div>
+                            <span style="font-weight: bold; width: 40px; text-align: right;">60%</span>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="width: 120px; color: var(--text-secondary);">Database</span>
+                            <div style="flex-grow: 1; background: #e5e7eb; height: 10px; border-radius: 5px; margin: 0 15px; overflow: hidden;">
+                                <div style="width: 70%; height: 100%; background: var(--primary-accent);"></div>
+                            </div>
+                            <span style="font-weight: bold; width: 40px; text-align: right;">70%</span>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="width: 120px; color: var(--text-secondary);">Machine Learning</span>
+                            <div style="flex-grow: 1; background: #e5e7eb; height: 10px; border-radius: 5px; margin: 0 15px; overflow: hidden;">
+                                <div style="width: 50%; height: 100%; background: var(--primary-accent);"></div>
+                            </div>
+                            <span style="font-weight: bold; width: 40px; text-align: right;">50%</span>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="width: 120px; color: var(--text-secondary);">Optimization</span>
+                            <div style="flex-grow: 1; background: #e5e7eb; height: 10px; border-radius: 5px; margin: 0 15px; overflow: hidden;">
+                                <div style="width: 40%; height: 100%; background: var(--primary-accent);"></div>
+                            </div>
+                            <span style="font-weight: bold; width: 40px; text-align: right;">40%</span>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="width: 120px; color: var(--text-secondary);">Hardware</span>
+                            <div style="flex-grow: 1; background: #e5e7eb; height: 10px; border-radius: 5px; margin: 0 15px; overflow: hidden;">
+                                <div style="width: 30%; height: 100%; background: var(--primary-accent);"></div>
+                            </div>
+                            <span style="font-weight: bold; width: 40px; text-align: right;">30%</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="card-box" style="padding: 8px 15px; margin-bottom: 8px; background: rgba(5, 150, 105, 0.05); border-left: 4px solid var(--primary-accent);">
+                    <p style="font-size: 14px; line-height: 1.4; color: var(--text-secondary); text-align: center;">EcoBin follows a modular software architecture where each component is developed independently and integrated through well-defined interfaces. This approach improves scalability, maintainability, testing, and future expansion.</p>
+                </div>
+            </div>
+            <div class="slide-number">05 / 15</div>
+        </div>
+
+        <!-- Slide 6: Database Design & Data Management -->
+        <div class="slide">
+            <div class="top-tab"></div>
+            <div class="slide-content" style="padding: 1% 4%;">
+                <div style="text-align: center; margin-bottom: 5px;">
+                    <h2 class="slide-title" style="font-size: 32px; margin-bottom: 2px;">Database Design &amp; Data Management</h2>
+                    <p style="color: var(--primary-accent); font-size: 16px; font-weight: 500;">Centralized Storage and Processing of Smart Waste Management Data</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 24% 48% 24%; gap: 15px; margin-bottom: 8px; align-items: stretch;">
+                    
+                    <!-- Left Column: Overview & Stored Info -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">Database Overview</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 1.5;">
+                                <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> PostgreSQL</li>
+                                <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> SQLAlchemy ORM</li>
+                                <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Normalized Relational Database</li>
+                                <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Indexed Sensor Records</li>
+                                <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Scalable Architecture</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Real-time Data Storage</li>
+                            </ul>
+                        </div>
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">Data Categories</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 1.5;">
+                                <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Bin Information</li>
+                                <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Sensor Readings</li>
+                                <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Fill Level History</li>
+                                <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> GPS Coordinates</li>
+                                <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Prediction Results</li>
+                                <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Priority Scores</li>
+                                <li style="margin-bottom: 6px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Collection Records</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Route History</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Center Column: DATABASE SCHEMA -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0; display: flex; flex-direction: column; align-items: center; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.02);">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; width: 100%;">DATABASE SCHEMA</h4>
+                        
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%;">
+                            <!-- BIN -->
+                            <div class="db-table" style="padding: 6px 12px; margin-bottom: 0; width: 240px; font-size: 12px; border-radius: 6px; background: var(--slide-bg);">
+                                <div class="db-title" style="font-size: 13px; margin-bottom: 4px; padding-bottom: 2px; text-align: center;">BIN</div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Bin_ID</span> <span class="db-type">PK</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Location</span> <span class="db-type">Point</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Latitude</span> <span class="db-type">Float</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Longitude</span> <span class="db-type">Float</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Capacity</span> <span class="db-type">Integer</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 0;"><span>Status</span> <span class="db-type">Enum</span></div>
+                            </div>
+                            
+                            <div class="flow-arrow" style="font-size: 14px; line-height: 1;">&darr; <span style="font-size: 10px; color: var(--text-secondary); vertical-align: middle;">1:N</span></div>
+                            
+                            <!-- SENSOR_DATA -->
+                            <div class="db-table" style="padding: 6px 12px; margin-bottom: 0; width: 240px; font-size: 12px; border-radius: 6px; background: var(--slide-bg);">
+                                <div class="db-title" style="font-size: 13px; margin-bottom: 4px; padding-bottom: 2px; text-align: center;">SENSOR_DATA</div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Reading_ID</span> <span class="db-type">PK</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Bin_ID</span> <span class="db-type">FK</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Timestamp</span> <span class="db-type">DateTime</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Fill_Level</span> <span class="db-type">Float</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Temperature</span> <span class="db-type">Float</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 0;"><span>Battery_Level</span> <span class="db-type">Float</span></div>
+                            </div>
+                            
+                            <div class="flow-arrow" style="font-size: 14px; line-height: 1;">&darr; <span style="font-size: 10px; color: var(--text-secondary); vertical-align: middle;">1:1</span></div>
+                            
+                            <!-- PREDICTIONS -->
+                            <div class="db-table" style="padding: 6px 12px; margin-bottom: 0; width: 240px; font-size: 12px; border-radius: 6px; background: var(--slide-bg);">
+                                <div class="db-title" style="font-size: 13px; margin-bottom: 4px; padding-bottom: 2px; text-align: center;">PREDICTIONS</div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Prediction_ID</span> <span class="db-type">PK</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Reading_ID</span> <span class="db-type">FK</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Predicted_Level</span> <span class="db-type">Float</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Overflow_Risk</span> <span class="db-type">Float</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Priority_Score</span> <span class="db-type">Float</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 0;"><span>Prediction_Time</span> <span class="db-type">DateTime</span></div>
+                            </div>
+                            
+                            <div class="flow-arrow" style="font-size: 14px; line-height: 1;">&darr; <span style="font-size: 10px; color: var(--text-secondary); vertical-align: middle;">N:1</span></div>
+                            
+                            <!-- ROUTES -->
+                            <div class="db-table" style="padding: 6px 12px; margin-bottom: 0; width: 240px; font-size: 12px; border-radius: 6px; background: var(--slide-bg);">
+                                <div class="db-title" style="font-size: 13px; margin-bottom: 4px; padding-bottom: 2px; text-align: center;">ROUTES</div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Route_ID</span> <span class="db-type">PK</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Vehicle_ID</span> <span class="db-type">String</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Assigned_Bins</span> <span class="db-type">Array</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Distance</span> <span class="db-type">Float</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 2px;"><span>Estimated_Time</span> <span class="db-type">Float</span></div>
+                                <div class="db-field" style="font-size: 11px; margin-bottom: 0;"><span>Status</span> <span class="db-type">Enum</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Workflow & Features -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 2; display: flex; flex-direction: column; align-items: center;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; width: 100%;">Database Workflow</h4>
+                            
+                            <div class="flowchart" style="width: 100%; font-size: 11px; gap: 2px;">
+                                <div class="flow-box" style="padding: 3px 8px; width: 180px; font-size: 11px; margin-top: 0; background: var(--slide-bg);">Smart Bin</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 3px 8px; width: 180px; font-size: 11px; margin-top: 0; background: var(--slide-bg);">Sensor Reading</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 3px 8px; width: 180px; font-size: 11px; margin-top: 0; background: var(--slide-bg);">Backend API</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 3px 8px; width: 180px; font-size: 11px; margin-top: 0; background: var(--slide-bg); font-weight: bold; border-color: var(--primary-accent);">PostgreSQL Database</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 3px 8px; width: 180px; font-size: 11px; margin-top: 0; background: var(--slide-bg);">Machine Learning</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 3px 8px; width: 180px; font-size: 11px; margin-top: 0; background: var(--slide-bg); border-color: var(--primary-accent);">Prediction Storage</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 3px 8px; width: 180px; font-size: 11px; margin-top: 0; background: var(--slide-bg);">Priority Engine</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 3px 8px; width: 180px; font-size: 11px; margin-top: 0; background: var(--slide-bg);">Route Optimization</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 3px 8px; width: 180px; font-size: 11px; margin-top: 0; background: var(--slide-bg);">Dashboard</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">Database Features</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px; line-height: 1.5;">
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Relational Structure</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Foreign Key Constraints</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Historical Data Storage</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Efficient Query Execution</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Real-time Updates</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Future Scalability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-box" style="padding: 8px 15px; margin-bottom: 8px; background: rgba(5, 150, 105, 0.05); border-left: 4px solid var(--primary-accent);">
+                    <h4 class="accent-text" style="font-size: 14px; margin-bottom: 4px;">Data Management Strategy</h4>
+                    <p style="font-size: 14px; line-height: 1.4; color: var(--text-secondary);">Historical sensor data, predictions, and optimized routes are securely stored in PostgreSQL, enabling efficient analytics, machine learning, and intelligent waste collection decisions.</p>
+                </div>
+            </div>
+            <div class="slide-number">06 / 15</div>
+        </div>
+
+        <!-- Slide 7: IoT Hardware Design & Sensor Integration -->
+        <div class="slide">
+            <div class="top-tab"></div>
+            <div class="slide-content" style="padding: 1% 4%;">
+                <div style="text-align: center; margin-bottom: 5px;">
+                    <h2 class="slide-title" style="font-size: 32px; margin-bottom: 2px;">IoT Hardware Design &amp; Sensor Integration</h2>
+                    <p style="color: var(--primary-accent); font-size: 16px; font-weight: 500;">Real-Time Waste Bin Monitoring Using ESP32 and Ultrasonic Sensors</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 24% 48% 24%; gap: 15px; margin-bottom: 8px; align-items: stretch;">
+                    
+                    <!-- Left Column: Components & Objectives -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Hardware Components</h4>
+                            <div style="font-size: 12px; line-height: 1.4;">
+                                <strong style="color: var(--text-primary);">Controller</strong><br>
+                                <span style="color: var(--text-secondary);">• ESP32 Development Board</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary);">Sensors</strong><br>
+                                <span style="color: var(--text-secondary);">• Ultrasonic Sensor (HC-SR04)</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary);">Power</strong><br>
+                                <span style="color: var(--text-secondary);">• USB / Battery Supply</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary);">Communication</strong><br>
+                                <span style="color: var(--text-secondary);">• Wi-Fi (ESP32)</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary);">Output</strong><br>
+                                <span style="color: var(--text-secondary);">• Fill-Level Data</span>
+                            </div>
+                        </div>
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Hardware Objectives</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px; line-height: 1.5;">
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Measure Waste Fill Level</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Real-Time Data Collection</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Wireless Data Transmission</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Low Power Consumption</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Reliable Sensor Monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Center Column: IoT Architecture -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0; display: flex; flex-direction: column; align-items: center; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.02);">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; width: 100%;">IoT System Architecture</h4>
+                        
+                        <div class="flowchart" style="width: 100%; font-size: 12px; gap: 4px; align-items: center;">
+                            <div class="flow-box" style="padding: 6px 12px; width: 280px; font-size: 13px; font-weight: bold; background: var(--slide-bg);">Smart Waste Bin</div>
+                            <div class="flow-arrow" style="font-size: 14px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 6px 12px; width: 280px; font-size: 13px; font-weight: bold; background: var(--slide-bg); border-color: var(--primary-accent);">Ultrasonic Sensor (HC-SR04)</div>
+                            <div style="font-size: 11px; color: var(--text-secondary); line-height: 1;">Measures Distance to Waste</div>
+                            <div class="flow-arrow" style="font-size: 14px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 6px 12px; width: 280px; font-size: 13px; font-weight: bold; background: var(--slide-bg); border-color: var(--primary-accent);">ESP32 Controller</div>
+                            <div style="font-size: 11px; color: var(--text-secondary); line-height: 1;">Calculates Fill Percentage</div>
+                            <div class="flow-arrow" style="font-size: 14px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 6px 12px; width: 280px; font-size: 13px; font-weight: bold; background: var(--slide-bg);">Wi-Fi Communication</div>
+                            <div class="flow-arrow" style="font-size: 14px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 6px 12px; width: 280px; font-size: 13px; font-weight: bold; background: var(--slide-bg);">FastAPI Backend</div>
+                            <div class="flow-arrow" style="font-size: 14px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 6px 12px; width: 280px; font-size: 13px; font-weight: bold; background: var(--slide-bg);">PostgreSQL Database</div>
+                            <div class="flow-arrow" style="font-size: 14px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 6px 12px; width: 280px; font-size: 13px; font-weight: bold; background: var(--slide-bg);">Dashboard &amp; ML Prediction</div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Workflow & Specs -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 2; display: flex; flex-direction: column; align-items: center;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; width: 100%;">Data Collection Workflow</h4>
+                            
+                            <div style="font-size: 11px; line-height: 1.3; color: var(--text-secondary); width: 100%;">
+                                <div style="margin-bottom: 4px;">
+                                    <strong style="color: var(--text-primary);">Step 1:</strong> Ultrasonic sensor measures distance from sensor to waste.
+                                </div>
+                                <div style="text-align: center; color: var(--primary-accent); margin-bottom: 4px;">&darr;</div>
+                                <div style="margin-bottom: 4px;">
+                                    <strong style="color: var(--text-primary);">Step 2:</strong> ESP32 converts the distance into fill percentage.
+                                </div>
+                                <div style="text-align: center; color: var(--primary-accent); margin-bottom: 4px;">&darr;</div>
+                                <div style="margin-bottom: 4px;">
+                                    <strong style="color: var(--text-primary);">Step 3:</strong> Sensor readings are sent through Wi-Fi.
+                                </div>
+                                <div style="text-align: center; color: var(--primary-accent); margin-bottom: 4px;">&darr;</div>
+                                <div style="margin-bottom: 4px;">
+                                    <strong style="color: var(--text-primary);">Step 4:</strong> Backend stores readings inside PostgreSQL.
+                                </div>
+                                <div style="text-align: center; color: var(--primary-accent); margin-bottom: 4px;">&darr;</div>
+                                <div style="margin-bottom: 4px;">
+                                    <strong style="color: var(--text-primary);">Step 5:</strong> Machine learning predicts future fill level.
+                                </div>
+                                <div style="text-align: center; color: var(--primary-accent); margin-bottom: 4px;">&darr;</div>
+                                <div>
+                                    <strong style="color: var(--text-primary);">Step 6:</strong> Dashboard displays live monitoring information.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Hardware Specs</h4>
+                            <table class="custom-table" style="font-size: 11px; margin-top: 0; box-shadow: none;">
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">ESP32</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">IoT Controller</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">HC-SR04</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">Distance Measure</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">Wi-Fi</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">Communication</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">FastAPI</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">API Integration</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: none;">PostgreSQL</td>
+                                        <td style="padding: 4px; border-bottom: none;">Data Storage</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-box" style="padding: 8px 15px; margin-bottom: 8px; background: rgba(5, 150, 105, 0.05); border-left: 4px solid var(--primary-accent);">
+                    <h4 class="accent-text" style="font-size: 14px; margin-bottom: 4px;">IoT Monitoring Strategy</h4>
+                    <p style="font-size: 14px; line-height: 1.4; color: var(--text-secondary);">The EcoBin hardware layer continuously measures the distance between the ultrasonic sensor and the waste surface. The ESP32 processes these measurements into fill-level percentages and transmits the data to the backend for storage, prediction, and intelligent route planning.</p>
+                </div>
+            </div>
+            <div class="slide-number">07 / 15</div>
+        </div>
+
+        <!-- Slide 8: Machine Learning Pipeline & Fill-Level Prediction -->
+        <div class="slide">
+            <div class="top-tab"></div>
+            <div class="slide-content" style="padding: 1% 4%;">
+                <div style="text-align: center; margin-bottom: 5px;">
+                    <h2 class="slide-title" style="font-size: 32px; margin-bottom: 2px;">Machine Learning Pipeline &amp; Fill-Level Prediction</h2>
+                    <p style="color: var(--primary-accent); font-size: 16px; font-weight: 500;">Predictive Analytics for Smart Waste Collection</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 24% 48% 24%; gap: 15px; margin-bottom: 8px; align-items: stretch;">
+                    
+                    <!-- Left Column: Objectives & Features -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">ML Objectives</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px; line-height: 1.5;">
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Predict Future Fill Levels</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Detect Potential Overflow</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Analyze Waste Gen Trends</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Reduce Unnecessary Pickups</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Improve Collection Efficiency</li>
+                            </ul>
+                        </div>
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Dataset Features</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px; line-height: 1.5;">
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Bin ID &amp; Timestamp</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Current Fill Level</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Previous Fill Levels</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> GPS Location</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Collection History</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Day of Week</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Time of Day</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Center Column: ML Prediction Pipeline -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0; display: flex; flex-direction: column; align-items: center; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.02);">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; width: 100%;">ML Prediction Pipeline</h4>
+                        
+                        <div class="flowchart" style="width: 100%; font-size: 11px; gap: 4px; align-items: center;">
+                            <div class="flow-box" style="padding: 4px 10px; width: 240px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">Sensor Data</div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 4px 10px; width: 240px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">Data Collection (API)</div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 4px 10px; width: 240px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">PostgreSQL Database</div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 6px 10px; width: 240px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">
+                                Data Preprocessing
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 4px 0;">
+                                <div style="font-weight: normal; font-size: 10px; text-align: left; padding-left: 10px;">
+                                    • Missing Value Handling<br>
+                                    • Feature Engineering<br>
+                                    • Normalization
+                                </div>
+                            </div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            
+                            <!-- XGBoost with Graph -->
+                            <div style="display: flex; gap: 10px; align-items: center;">
+                                <div class="flow-box" style="padding: 4px 10px; width: 140px; font-size: 12px; font-weight: bold; background: var(--slide-bg); border-color: var(--primary-accent);">XGBoost Model</div>
+                                <div style="font-size: 8px; line-height: 1.1; font-family: monospace; text-align: left; border: 1px solid var(--border-color); padding: 4px; border-radius: 4px; background: white; color: var(--text-secondary);">
+                                    %<br>
+                                    100| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #dc2626;">●</span> Pred<br>
+                                    &nbsp;90| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●<br>
+                                    &nbsp;70| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●<br>
+                                    &nbsp;50| &nbsp;&nbsp;&nbsp;●<br>
+                                    &nbsp;30| &nbsp;●<br>
+                                    &nbsp;&nbsp;&nbsp;+---------&rarr;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp; 8 10 12 14 16
+                                </div>
+                            </div>
+
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 4px 10px; width: 240px; font-size: 12px; font-weight: bold; background: var(--slide-bg); border-color: var(--primary-accent);">Fill Level Prediction</div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 4px 10px; width: 240px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">Overflow Risk Classification</div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 4px 10px; width: 240px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">Priority Score Generation</div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 4px 10px; width: 240px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">Route Optimization Engine</div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Evaluation & Output -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Model Evaluation</h4>
+                            <div style="font-size: 12px; line-height: 1.4;">
+                                <strong style="color: var(--text-primary); font-size: 14px;">MAE</strong><br>
+                                <span style="color: var(--text-secondary);">Mean Absolute Error</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary); font-size: 14px;">RMSE</strong><br>
+                                <span style="color: var(--text-secondary);">Root Mean Square Error</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary); font-size: 14px;">R² Score</strong><br>
+                                <span style="color: var(--text-secondary);">Coefficient of Determination</span>
+                            </div>
+                        </div>
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1.5; display: flex; flex-direction: column; align-items: center;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; width: 100%;">Prediction Output</h4>
+                            
+                            <div style="font-size: 11px; line-height: 1.3; color: var(--text-secondary); width: 100%; text-align: center;">
+                                <div style="margin-bottom: 2px;">Current Fill Level</div>
+                                <div style="font-size: 16px; font-weight: bold; color: var(--text-primary); margin-bottom: 2px;">68%</div>
+                                <div style="color: var(--primary-accent); margin-bottom: 2px;">&darr;</div>
+                                
+                                <div style="margin-bottom: 2px;">Predicted Fill Level (4 Hours)</div>
+                                <div style="font-size: 16px; font-weight: bold; color: #dc2626; margin-bottom: 2px;">91%</div>
+                                <div style="color: var(--primary-accent); margin-bottom: 2px;">&darr;</div>
+                                
+                                <div style="margin-bottom: 2px;">Overflow Risk</div>
+                                <div style="font-size: 14px; font-weight: bold; color: #dc2626; margin-bottom: 2px;">HIGH</div>
+                                <div style="color: var(--primary-accent); margin-bottom: 2px;">&darr;</div>
+                                
+                                <div style="margin-bottom: 2px;">Priority Score</div>
+                                <div style="font-size: 14px; font-weight: bold; color: var(--text-primary); margin-bottom: 2px;">9.6 / 10</div>
+                                <div style="color: var(--primary-accent); margin-bottom: 2px;">&darr;</div>
+                                
+                                <div style="margin-bottom: 2px;">Collection Required</div>
+                                <div style="font-size: 14px; font-weight: bold; color: #059669;">YES</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-box" style="padding: 8px 15px; margin-bottom: 8px; background: rgba(5, 150, 105, 0.05); border-left: 4px solid var(--primary-accent);">
+                    <h4 class="accent-text" style="font-size: 14px; margin-bottom: 4px;">Prediction Strategy</h4>
+                    <p style="font-size: 14px; line-height: 1.4; color: var(--text-secondary);">EcoBin uses an XGBoost regression model to forecast future waste fill levels based on historical sensor readings and engineered features. These predictions are converted into overflow risk levels and priority scores, enabling proactive waste collection before bins reach capacity.</p>
+                </div>
+            </div>
+            <div class="slide-number">08 / 15</div>
+        </div>
+
+        <!-- Slide 9: Backend API & System Integration -->
+        <div class="slide">
+            <div class="top-tab-right"></div>
+            <div class="slide-content" style="padding: 1% 4%;">
+                <div style="text-align: center; margin-bottom: 5px;">
+                    <h2 class="slide-title" style="font-size: 32px; margin-bottom: 2px;">Backend API &amp; System Integration</h2>
+                    <p style="color: var(--primary-accent); font-size: 16px; font-weight: 500;">Connecting IoT Devices, Machine Learning, Database, and Dashboard</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 24% 48% 24%; gap: 15px; margin-bottom: 8px; align-items: stretch;">
+                    
+                    <!-- Left Column: Tech & Responsibilities -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Backend Technologies</h4>
+                            <div style="font-size: 12px; line-height: 1.4;">
+                                <strong style="color: var(--text-primary);">Framework</strong><br>
+                                <span style="color: var(--text-secondary);">• FastAPI</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary);">Language</strong><br>
+                                <span style="color: var(--text-secondary);">• Python</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary);">API Type</strong><br>
+                                <span style="color: var(--text-secondary);">• RESTful APIs</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary);">Communication</strong><br>
+                                <span style="color: var(--text-secondary);">• HTTP / JSON</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary);">Documentation</strong><br>
+                                <span style="color: var(--text-secondary);">• OpenAPI (Swagger UI)</span>
+                            </div>
+                        </div>
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Responsibilities</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px; line-height: 1.5;">
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Receive IoT Sensor Data</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Validate Incoming Requests</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Store Data in PostgreSQL</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Trigger ML Predictions</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Calculate Priority Scores</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Generate Optimized Routes</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Serve Dashboard APIs</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Center Column: Workflow -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0; display: flex; flex-direction: column; align-items: center; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.02);">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; width: 100%;">System Integration Workflow</h4>
+                        
+                        <div class="flowchart" style="width: 100%; font-size: 11px; gap: 4px; align-items: center;">
+                            <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">ESP32 Smart Bin</div>
+                            <div style="font-size: 11px; color: var(--text-secondary); line-height: 1;">HTTP POST /sensor-data</div>
+                            <div class="flow-arrow" style="font-size: 14px; line-height: 1;">&darr;</div>
+                            
+                            <div class="flow-box" style="padding: 6px 10px; width: 280px; font-size: 13px; font-weight: bold; background: var(--slide-bg); border-color: var(--primary-accent);">FastAPI Backend Server</div>
+                            
+                            <!-- The parallel section -->
+                            <div style="display: flex; flex-direction: column; align-items: center; width: 100%; margin: 2px 0;">
+                                <div style="display: flex; justify-content: center; width: 240px;">
+                                    <div style="border-left: 2px solid var(--primary-accent); border-top: 2px solid var(--primary-accent); width: 50%; height: 8px; border-top-left-radius: 4px;"></div>
+                                    <div style="border-right: 2px solid var(--primary-accent); border-top: 2px solid var(--primary-accent); width: 50%; height: 8px; border-top-right-radius: 4px;"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; width: 260px;">
+                                    <div style="font-size: 14px; line-height: 1; color: var(--primary-accent);">&darr;</div>
+                                    <div style="font-size: 14px; line-height: 1; color: var(--primary-accent);">&darr;</div>
+                                    <div style="font-size: 14px; line-height: 1; color: var(--primary-accent);">&darr;</div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; width: 280px; gap: 5px;">
+                                    <div class="flow-box" style="padding: 4px; width: 33%; font-size: 10px; font-weight: bold; background: var(--slide-bg);">PostgreSQL<br>(Database)</div>
+                                    <div class="flow-box" style="padding: 4px; width: 33%; font-size: 10px; font-weight: bold; background: var(--slide-bg);">ML Engine<br>(XGBoost)</div>
+                                    <div class="flow-box" style="padding: 4px; width: 33%; font-size: 10px; font-weight: bold; background: var(--slide-bg);">Route Engine<br>(OR-Tools)</div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; width: 260px;">
+                                    <div style="font-size: 14px; line-height: 1; color: var(--primary-accent);">&darr;</div>
+                                    <div style="font-size: 14px; line-height: 1; color: var(--primary-accent);">&darr;</div>
+                                    <div style="font-size: 14px; line-height: 1; color: var(--primary-accent);">&darr;</div>
+                                </div>
+                                <div style="display: flex; justify-content: center; width: 240px;">
+                                    <div style="border-left: 2px solid var(--primary-accent); border-bottom: 2px solid var(--primary-accent); width: 50%; height: 8px; border-bottom-left-radius: 4px;"></div>
+                                    <div style="border-right: 2px solid var(--primary-accent); border-bottom: 2px solid var(--primary-accent); width: 50%; height: 8px; border-bottom-right-radius: 4px;"></div>
+                                </div>
+                                <div style="font-size: 14px; line-height: 1; color: var(--primary-accent);">&darr;</div>
+                            </div>
+                            
+                            <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">Business Logic Layer</div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">Priority &amp; Alerts Engine</div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 12px; font-weight: bold; background: var(--slide-bg); border-color: var(--primary-accent);">REST API Responses</div>
+                            <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                            <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">React Dashboard UI</div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Endpoints & Features -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1.2;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Key API Endpoints</h4>
+                            <table class="custom-table" style="font-size: 10px; margin-top: 0; box-shadow: none;">
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 4px; font-family: monospace; font-weight: bold; color: var(--primary-accent); border-bottom: 1px solid var(--border-color);">POST /sensor-data</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">Receive readings</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-family: monospace; font-weight: bold; color: var(--primary-accent); border-bottom: 1px solid var(--border-color);">GET /bins</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">Retrieve all bins</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-family: monospace; font-weight: bold; color: var(--primary-accent); border-bottom: 1px solid var(--border-color);">GET /predictions</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">View ML predictions</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-family: monospace; font-weight: bold; color: var(--primary-accent); border-bottom: 1px solid var(--border-color);">GET /routes</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">Fetch optimized routes</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-family: monospace; font-weight: bold; color: var(--primary-accent); border-bottom: 1px solid var(--border-color);">GET /dashboard</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">Dashboard summary</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-family: monospace; font-weight: bold; color: var(--primary-accent); border-bottom: none;">GET /health</td>
+                                        <td style="padding: 4px; border-bottom: none;">Service health check</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Integration Features</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px; line-height: 1.5;">
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Modular Architecture</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Secure REST APIs</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Real-Time Communication</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Auto Data Processing</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Scalable Backend Design</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Easy Module Integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-box" style="padding: 8px 15px; margin-bottom: 8px; background: rgba(5, 150, 105, 0.05); border-left: 4px solid var(--primary-accent);">
+                    <h4 class="accent-text" style="font-size: 14px; margin-bottom: 4px;">Integration Strategy</h4>
+                    <p style="font-size: 14px; line-height: 1.4; color: var(--text-secondary);">The FastAPI backend serves as the central communication layer of EcoBin. It receives sensor data from IoT devices, stores information in PostgreSQL, invokes the machine learning model for predictions, coordinates route optimization, and exposes REST APIs for the dashboard and monitoring applications.</p>
+                </div>
+            </div>
+            <div class="slide-number">09 / 15</div>
+        </div>
+
+        <!-- Slide 10: Dashboard Design & Real-Time Monitoring -->
+        <div class="slide">
+            <div class="top-tab"></div>
+            <div class="slide-content" style="padding: 1% 4%;">
+                <div style="text-align: center; margin-bottom: 5px;">
+                    <h2 class="slide-title" style="font-size: 32px; margin-bottom: 2px;">Dashboard Design &amp; Real-Time Monitoring</h2>
+                    <p style="color: var(--primary-accent); font-size: 16px; font-weight: 500;">Interactive Web Dashboard for Monitoring Smart Waste Collection</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 24% 48% 24%; gap: 15px; margin-bottom: 8px; align-items: stretch;">
+                    
+                    <!-- Left Column: Features & Target Users -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1.5;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Dashboard Features</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 11px; line-height: 1.5;">
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Live Bin Monitoring</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Fill Level Visualization</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Interactive City Map</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Overflow Alerts</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Priority-Based Bin List</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Route Optimization Display</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Historical Analytics</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> System Status Monitoring</li>
+                            </ul>
+                        </div>
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Target Users</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 11px; line-height: 1.5;">
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Municipal Authorities</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Waste Collection Operators</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> City Administrators</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Monitoring Center</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> System Administrators</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Center Column: Dashboard UI Mockup -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0; display: flex; flex-direction: column; align-items: center; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.02);">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; width: 100%;">Dashboard Layout</h4>
+                        
+                        <div style="width: 100%; font-family: monospace; font-size: 12px; line-height: 1.5; white-space: pre; background: var(--slide-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 10px; color: var(--text-primary); text-align: left; overflow: hidden;">
+┌─────────────────────────────────────────┐
+│ EcoBin Smart Dashboard                  │
+├─────────────────────────────────────────┤
+│                                         │
+│  📍 Interactive City Map                │
+│                                         │
+│   <span style="color: #10b981;">🟢 Bin A</span>    <span style="color: #f59e0b;">🟡 Bin B</span>    <span style="color: #ef4444;">🔴 Bin C</span>   │
+│                                         │
+│                                         │
+├─────────────────────────────────────────┤
+│ Fill Levels   Priority   Route Status   │
+│ <span style="color: #10b981;">██████</span> 65%    Medium     Active         │
+│ <span style="color: #f59e0b;">████████</span> 82%  High       Pending        │
+│ <span style="color: #ef4444;">██████████</span>98% Critical   Immediate      │
+├─────────────────────────────────────────┤
+│ Today's Collections : 32                │
+│ Overflow Alerts     : <span style="color: #ef4444;">3</span>                 │
+│ Active Vehicles     : 5                 │
+└─────────────────────────────────────────┘
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Modules & Tech -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1.5;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Dashboard Modules</h4>
+                            <div style="font-size: 11px; line-height: 1.4;">
+                                <strong style="color: var(--text-primary);">Monitoring</strong><br>
+                                <span style="color: var(--text-secondary);">• Live Bin Status</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary);">Analytics</strong><br>
+                                <span style="color: var(--text-secondary);">• Fill-Level Trends</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary);">Prediction</strong><br>
+                                <span style="color: var(--text-secondary);">• Future Fill Levels</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary);">Optimization</strong><br>
+                                <span style="color: var(--text-secondary);">• Collection Routes</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary);">Alerts &amp; Reports</strong><br>
+                                <span style="color: var(--text-secondary);">• Overflow Warnings &amp; Daily Stats</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Technologies</h4>
+                            <table class="custom-table" style="font-size: 10px; margin-top: 0; box-shadow: none;">
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">Frontend</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">React</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">Language</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">TypeScript</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">Maps</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">Leaflet.js</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">Charts</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">Chart.js</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: none;">API</td>
+                                        <td style="padding: 4px; border-bottom: none;">FastAPI</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-box" style="padding: 8px 15px; margin-bottom: 8px; background: rgba(5, 150, 105, 0.05); border-left: 4px solid var(--primary-accent);">
+                    <h4 class="accent-text" style="font-size: 14px; margin-bottom: 4px;">Visualization Strategy</h4>
+                    <p style="font-size: 14px; line-height: 1.4; color: var(--text-secondary);">The EcoBin dashboard provides a centralized interface for monitoring smart bins, visualizing fill levels, displaying machine learning predictions, and presenting optimized waste collection routes. It enables operators to make informed decisions through real-time analytics and interactive visualizations.</p>
+                </div>
+            </div>
+            <div class="slide-number">10 / 15</div>
+        </div>
+
+        <!-- Slide 11: Route Optimization & Intelligent Collection Planning -->
+        <div class="slide">
+            <div class="top-tab-right"></div>
+            <div class="slide-content" style="padding: 1% 4%;">
+                <div style="text-align: center; margin-bottom: 5px;">
+                    <h2 class="slide-title" style="font-size: 32px; margin-bottom: 2px;">Route Optimization &amp; Intelligent Collection Planning</h2>
+                    <p style="color: var(--primary-accent); font-size: 16px; font-weight: 500;">Efficient Waste Collection Using Priority-Based Vehicle Routing</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 24% 48% 24%; gap: 15px; margin-bottom: 8px; align-items: stretch;">
+                    
+                    <!-- Left Column: Objectives & Inputs -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1.5;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Objectives</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 11px; line-height: 1.5;">
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Minimize Travel Distance</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Reduce Fuel Consumption</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Prevent Bin Overflow</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Prioritize Critical Bins</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Improve Collection Efficiency</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Reduce Collection Time</li>
+                            </ul>
+                        </div>
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Inputs to Route Engine</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 11px; line-height: 1.5;">
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> IoT Fill Levels</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Machine Learning Predictions</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Bin GPS Locations</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Priority Scores</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Vehicle Capacity</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: var(--primary-accent); margin-right: 8px;">•</span> Road Distance Matrix</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Center Column: Workflow & Priority -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 2; display: flex; flex-direction: column; align-items: center; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.02);">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 6px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; width: 100%;">Route Optimization Workflow</h4>
+                            
+                            <div class="flowchart" style="width: 100%; font-size: 11px; gap: 4px; align-items: center;">
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">Smart Bin Data</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">Fill-Level Prediction</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">Overflow Risk Analysis</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">Priority Score Assignment</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1; color: var(--primary-accent);">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 12px; font-weight: bold; background: var(--slide-bg); border-color: var(--primary-accent);">Vehicle Route Planning<br><span style="font-size: 10px; font-weight: normal; color: var(--text-secondary);">(Google OR-Tools CVRP)</span></div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1; color: var(--primary-accent);">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 12px; font-weight: bold; background: var(--slide-bg); border-color: var(--primary-accent);">Optimized Collection Route</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 12px; font-weight: bold; background: var(--slide-bg);">Driver Navigation</div>
+                            </div>
+                        </div>
+
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 13px; margin-bottom: 6px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 4px;">Priority Classification</h4>
+                            <table class="custom-table" style="font-size: 10px; margin-top: 0; box-shadow: none;">
+                                <thead>
+                                    <tr>
+                                        <th style="padding: 4px;">Fill Level</th>
+                                        <th style="padding: 4px;">Priority</th>
+                                        <th style="padding: 4px;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold;">0–50%</td>
+                                        <td style="padding: 4px; color: #10b981; font-weight: bold;">Low</td>
+                                        <td style="padding: 4px;">Monitor</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold;">51–80%</td>
+                                        <td style="padding: 4px; color: #f59e0b; font-weight: bold;">Medium</td>
+                                        <td style="padding: 4px;">Schedule Collection</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold;">81–95%</td>
+                                        <td style="padding: 4px; color: #f97316; font-weight: bold;">High</td>
+                                        <td style="padding: 4px;">Priority Collection</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: none;">96–100%</td>
+                                        <td style="padding: 4px; color: #ef4444; font-weight: bold; border-bottom: none;">Critical</td>
+                                        <td style="padding: 4px; border-bottom: none;">Immediate Collection</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Process & Tech -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1.5;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Optimization Process</h4>
+                            <div style="font-size: 11px; line-height: 1.4; display: flex; flex-direction: column; align-items: center;">
+                                <strong style="color: var(--primary-accent);">Step 1</strong>
+                                <span style="color: var(--text-secondary); text-align: center;">Receive predicted fill levels</span>
+                                <div style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <strong style="color: var(--primary-accent);">Step 2</strong>
+                                <span style="color: var(--text-secondary); text-align: center;">Calculate priority score</span>
+                                <div style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <strong style="color: var(--primary-accent);">Step 3</strong>
+                                <span style="color: var(--text-secondary); text-align: center;">Select bins requiring collection</span>
+                                <div style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <strong style="color: var(--primary-accent);">Step 4</strong>
+                                <span style="color: var(--text-secondary); text-align: center;">Optimize route using CVRP</span>
+                                <div style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <strong style="color: var(--primary-accent);">Step 5</strong>
+                                <span style="color: var(--text-secondary); text-align: center;">Generate shortest collection path</span>
+                                <div style="font-size: 12px; line-height: 1;">&darr;</div>
+                                <strong style="color: var(--primary-accent);">Step 6</strong>
+                                <span style="color: var(--text-secondary); text-align: center;">Display route on dashboard</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Technologies Used</h4>
+                            <table class="custom-table" style="font-size: 10px; margin-top: 0; box-shadow: none;">
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">Optimization</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">Google OR-Tools</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">Algorithm</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">CVRP</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">Distance Matrix</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">GPS Coordinates</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">Visualization</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color);">Leaflet.js</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: none;">Backend</td>
+                                        <td style="padding: 4px; border-bottom: none;">FastAPI</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-box" style="padding: 8px 15px; margin-bottom: 8px; background: rgba(5, 150, 105, 0.05); border-left: 4px solid var(--primary-accent);">
+                    <h4 class="accent-text" style="font-size: 14px; margin-bottom: 4px;">Optimization Strategy</h4>
+                    <p style="font-size: 14px; line-height: 1.4; color: var(--text-secondary);">EcoBin combines machine learning predictions with route optimization to determine the most efficient waste collection sequence. By prioritizing bins based on predicted overflow risk and optimizing vehicle paths using the Capacitated Vehicle Routing Problem (CVRP), the system reduces travel distance, fuel consumption, and operational cost while preventing waste overflow.</p>
+                </div>
+            </div>
+            <div class="slide-number">11 / 15</div>
+        </div>
+
+        <!-- Slide 12: Implementation Progress & Current Status -->
+        <div class="slide">
+            <div class="top-tab"></div>
+            <div class="slide-content" style="padding: 1% 4%;">
+                <div style="text-align: center; margin-bottom: 5px;">
+                    <h2 class="slide-title" style="font-size: 32px; margin-bottom: 2px;">Implementation Progress &amp; Current Status</h2>
+                    <p style="color: var(--primary-accent); font-size: 16px; font-weight: 500;">Project Development Progress as of Review 02</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 26% 48% 26%; gap: 15px; margin-bottom: 8px; align-items: stretch;">
+                    
+                    <!-- Left Column: Completed Modules -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0;">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Completed Modules ✅</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; font-size: 11px; line-height: 1.5;">
+                            <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Problem Analysis</li>
+                            <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Literature Review</li>
+                            <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> System Architecture</li>
+                            <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Technology Stack Selection</li>
+                            <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Repository Structure</li>
+                            <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Database Design</li>
+                            <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> IoT Hardware Design</li>
+                            <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Machine Learning Workflow</li>
+                            <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Backend Architecture</li>
+                            <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Dashboard UI Design</li>
+                            <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Route Optimization Design</li>
+                            <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Interactive Project Simulation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Center Column: Progress Bars -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0; display: flex; flex-direction: column; align-items: center; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.02);">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; width: 100%;">Overall Project Progress</h4>
+                        
+                        <div style="width: 100%; display: flex; flex-direction: column; gap: 8px;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px;">
+                                <span style="font-weight: bold; width: 140px;">Architecture &amp; Design</span>
+                                <div style="flex: 1; height: 10px; background: rgba(5, 150, 105, 0.2); border-radius: 5px; overflow: hidden; margin: 0 10px;">
+                                    <div style="width: 100%; height: 100%; background: #10b981;"></div>
+                                </div>
+                                <span style="font-weight: bold; width: 30px; text-align: right; color: #10b981;">100%</span>
+                            </div>
+                            
+                            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px;">
+                                <span style="font-weight: bold; width: 140px;">Repository Setup</span>
+                                <div style="flex: 1; height: 10px; background: rgba(5, 150, 105, 0.2); border-radius: 5px; overflow: hidden; margin: 0 10px;">
+                                    <div style="width: 100%; height: 100%; background: #10b981;"></div>
+                                </div>
+                                <span style="font-weight: bold; width: 30px; text-align: right; color: #10b981;">100%</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px;">
+                                <span style="font-weight: bold; width: 140px;">Database Design</span>
+                                <div style="flex: 1; height: 10px; background: rgba(5, 150, 105, 0.2); border-radius: 5px; overflow: hidden; margin: 0 10px;">
+                                    <div style="width: 100%; height: 100%; background: #10b981;"></div>
+                                </div>
+                                <span style="font-weight: bold; width: 30px; text-align: right; color: #10b981;">100%</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px;">
+                                <span style="font-weight: bold; width: 140px;">IoT Hardware Planning</span>
+                                <div style="flex: 1; height: 10px; background: rgba(5, 150, 105, 0.2); border-radius: 5px; overflow: hidden; margin: 0 10px;">
+                                    <div style="width: 90%; height: 100%; background: #10b981;"></div>
+                                </div>
+                                <span style="font-weight: bold; width: 30px; text-align: right; color: #10b981;">90%</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px;">
+                                <span style="font-weight: bold; width: 140px;">Frontend Dashboard</span>
+                                <div style="flex: 1; height: 10px; background: rgba(5, 150, 105, 0.2); border-radius: 5px; overflow: hidden; margin: 0 10px;">
+                                    <div style="width: 80%; height: 100%; background: #10b981;"></div>
+                                </div>
+                                <span style="font-weight: bold; width: 30px; text-align: right; color: #10b981;">80%</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px;">
+                                <span style="font-weight: bold; width: 140px;">Backend Development</span>
+                                <div style="flex: 1; height: 10px; background: rgba(5, 150, 105, 0.2); border-radius: 5px; overflow: hidden; margin: 0 10px;">
+                                    <div style="width: 70%; height: 100%; background: #f59e0b;"></div>
+                                </div>
+                                <span style="font-weight: bold; width: 30px; text-align: right; color: #f59e0b;">70%</span>
+                            </div>
+                            
+                            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px;">
+                                <span style="font-weight: bold; width: 140px;">ML Pipeline</span>
+                                <div style="flex: 1; height: 10px; background: rgba(5, 150, 105, 0.2); border-radius: 5px; overflow: hidden; margin: 0 10px;">
+                                    <div style="width: 60%; height: 100%; background: #f59e0b;"></div>
+                                </div>
+                                <span style="font-weight: bold; width: 30px; text-align: right; color: #f59e0b;">60%</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px;">
+                                <span style="font-weight: bold; width: 140px;">Route Optimization</span>
+                                <div style="flex: 1; height: 10px; background: rgba(5, 150, 105, 0.2); border-radius: 5px; overflow: hidden; margin: 0 10px;">
+                                    <div style="width: 60%; height: 100%; background: #f59e0b;"></div>
+                                </div>
+                                <span style="font-weight: bold; width: 30px; text-align: right; color: #f59e0b;">60%</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px;">
+                                <span style="font-weight: bold; width: 140px;">System Integration</span>
+                                <div style="flex: 1; height: 10px; background: rgba(5, 150, 105, 0.2); border-radius: 5px; overflow: hidden; margin: 0 10px;">
+                                    <div style="width: 40%; height: 100%; background: #ef4444;"></div>
+                                </div>
+                                <span style="font-weight: bold; width: 30px; text-align: right; color: #ef4444;">40%</span>
+                            </div>
+                            
+                            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px;">
+                                <span style="font-weight: bold; width: 140px;">Testing &amp; Validation</span>
+                                <div style="flex: 1; height: 10px; background: rgba(5, 150, 105, 0.2); border-radius: 5px; overflow: hidden; margin: 0 10px;">
+                                    <div style="width: 20%; height: 100%; background: #ef4444;"></div>
+                                </div>
+                                <span style="font-weight: bold; width: 30px; text-align: right; color: #ef4444;">20%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Current Work & Milestones -->
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1.2;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Current Activities 🚧</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 11px; line-height: 1.5;">
+                                <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="margin-right: 6px;">🚧</span> ESP32 Hardware Assembly</li>
+                                <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="margin-right: 6px;">🚧</span> Backend API Development</li>
+                                <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="margin-right: 6px;">🚧</span> ML Model Training</li>
+                                <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="margin-right: 6px;">🚧</span> Database Integration</li>
+                                <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="margin-right: 6px;">🚧</span> Dashboard Development</li>
+                                <li style="margin-bottom: 3px; color: var(--text-secondary);"><span style="margin-right: 6px;">🚧</span> Route Optimization Engine</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="margin-right: 6px;">🚧</span> End-to-End Module Integration</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Next Milestones</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 11px; line-height: 1.5;">
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="margin-right: 6px;">⏳</span> Complete Hardware Prototype</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="margin-right: 6px;">⏳</span> Integrate All Modules</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="margin-right: 6px;">⏳</span> Perform System Testing</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="margin-right: 6px;">⏳</span> Evaluate ML Performance</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="margin-right: 6px;">⏳</span> Optimize Collection Routes</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="margin-right: 6px;">⏳</span> Prepare Final Demonstration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Timeline -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; padding: 10px 20px; background: rgba(5, 150, 105, 0.05); border: 1px solid var(--border-color); border-radius: 6px;">
+                    <div style="text-align: center;">
+                        <div style="font-weight: bold; font-size: 13px; color: var(--text-primary);">Review 01</div>
+                        <div style="font-size: 11px; color: var(--text-secondary);">Planning &amp; Design</div>
+                    </div>
+                    <div style="color: var(--primary-accent); font-weight: bold; font-size: 16px;">&rarr;</div>
+                    <div style="text-align: center; padding: 4px 15px; border: 2px solid var(--primary-accent); border-radius: 6px; background: var(--slide-bg);">
+                        <div style="font-weight: bold; font-size: 13px; color: var(--primary-accent);">Review 02</div>
+                        <div style="font-size: 11px; color: var(--text-primary);">Implementation &amp; Integration</div>
+                    </div>
+                    <div style="color: var(--text-secondary); font-weight: bold; font-size: 16px;">&rarr;</div>
+                    <div style="text-align: center;">
+                        <div style="font-weight: bold; font-size: 13px; color: var(--text-secondary);">Review 03</div>
+                        <div style="font-size: 11px; color: var(--text-secondary);">Testing • Evaluation • Prototype</div>
+                    </div>
+                </div>
+
+                <div class="card-box" style="padding: 8px 15px; margin-bottom: 8px; background: rgba(5, 150, 105, 0.05); border-left: 4px solid var(--primary-accent);">
+                    <h4 class="accent-text" style="font-size: 14px; margin-bottom: 4px;">Current Project Status</h4>
+                    <p style="font-size: 14px; line-height: 1.4; color: var(--text-secondary);">The EcoBin project has successfully completed the planning and system design phases. Core software modules are under active development, with integration and testing scheduled before the final review. The project is progressing according to the planned development roadmap.</p>
+                </div>
+            </div>
+            <div class="slide-number">12 / 15</div>
+        </div>
+
+        <!-- Slide 13: Challenges, Risk Analysis & Future Roadmap -->
+        <div class="slide">
+            <div class="top-tab-right"></div>
+            <div class="slide-content" style="padding: 1% 4%;">
+                <div style="text-align: center; margin-bottom: 5px;">
+                    <h2 class="slide-title" style="font-size: 32px; margin-bottom: 2px;">Challenges, Risk Analysis &amp; Future Roadmap</h2>
+                    <p style="color: var(--primary-accent); font-size: 16px; font-weight: 500;">Addressing Technical Challenges and Planning for Final Implementation</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 26% 48% 26%; gap: 15px; margin-bottom: 8px; align-items: stretch;">
+                    
+                    <!-- Left Column: Technical Challenges -->
+                    <div class="card-box" style="padding: 10px; margin-bottom: 0;">
+                        <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Technical Challenges</h4>
+                        <div style="font-size: 11px; line-height: 1.4;">
+                            <strong style="color: var(--text-primary);">Hardware Challenges</strong><br>
+                            <span style="color: var(--text-secondary);">• Accurate Sensor Calibration</span><br>
+                            <span style="color: var(--text-secondary);">• Stable Wi-Fi Connectivity</span><br>
+                            <span style="color: var(--text-secondary);">• Power Management</span>
+                            <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                            
+                            <strong style="color: var(--text-primary);">Software Challenges</strong><br>
+                            <span style="color: var(--text-secondary);">• Real-Time Data Processing</span><br>
+                            <span style="color: var(--text-secondary);">• Backend Module Integration</span><br>
+                            <span style="color: var(--text-secondary);">• API Communication</span>
+                            <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                            
+                            <strong style="color: var(--text-primary);">Machine Learning Challenges</strong><br>
+                            <span style="color: var(--text-secondary);">• Data Quality</span><br>
+                            <span style="color: var(--text-secondary);">• Model Accuracy</span><br>
+                            <span style="color: var(--text-secondary);">• Feature Engineering</span>
+                            <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                            
+                            <strong style="color: var(--text-primary);">Optimization Challenges</strong><br>
+                            <span style="color: var(--text-secondary);">• Dynamic Route Planning</span><br>
+                            <span style="color: var(--text-secondary);">• Vehicle Capacity Constraints</span>
+                        </div>
+                    </div>
+
+                    <!-- Center Column: Risk Assessment -->
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 2; display: flex; flex-direction: column; align-items: center; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.02);">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 6px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; width: 100%;">Risk Assessment Matrix</h4>
+                            <table class="custom-table" style="font-size: 11px; margin-top: 0; box-shadow: none; width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th style="padding: 6px;">Risk</th>
+                                        <th style="padding: 6px; text-align: center;">Impact</th>
+                                        <th style="padding: 6px;">Mitigation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 6px; font-weight: bold;">Sensor Failure</td>
+                                        <td style="padding: 6px; text-align: center; color: #ef4444; font-weight: bold;">High</td>
+                                        <td style="padding: 6px;">Sensor calibration &amp; validation</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px; font-weight: bold;">Network Interruption</td>
+                                        <td style="padding: 6px; text-align: center; color: #f59e0b; font-weight: bold;">Medium</td>
+                                        <td style="padding: 6px;">Local buffering &amp; retries</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px; font-weight: bold;">Inaccurate Predictions</td>
+                                        <td style="padding: 6px; text-align: center; color: #ef4444; font-weight: bold;">High</td>
+                                        <td style="padding: 6px;">Model tuning &amp; retraining</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px; font-weight: bold;">Database Failure</td>
+                                        <td style="padding: 6px; text-align: center; color: #f59e0b; font-weight: bold;">Medium</td>
+                                        <td style="padding: 6px;">Backup &amp; recovery strategy</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px; font-weight: bold;">Route Calculation Delay</td>
+                                        <td style="padding: 6px; text-align: center; color: #f59e0b; font-weight: bold;">Medium</td>
+                                        <td style="padding: 6px;">Optimized algorithms</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 6px; font-weight: bold; border-bottom: none;">Integration Issues</td>
+                                        <td style="padding: 6px; text-align: center; color: #ef4444; font-weight: bold; border-bottom: none;">High</td>
+                                        <td style="padding: 6px; border-bottom: none;">Modular testing</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 13px; margin-bottom: 6px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 4px;">Risk Levels</h4>
+                            <div style="display: flex; justify-content: space-between; font-size: 11px;">
+                                <div>
+                                    <strong style="color: #10b981;">🟢 Low Risk</strong><br>
+                                    <span style="color: var(--text-secondary);">Documentation<br>Presentation</span>
+                                </div>
+                                <div>
+                                    <strong style="color: #f59e0b;">🟡 Medium Risk</strong><br>
+                                    <span style="color: var(--text-secondary);">Backend Integration<br>Database Performance</span>
+                                </div>
+                                <div>
+                                    <strong style="color: #ef4444;">🔴 High Risk</strong><br>
+                                    <span style="color: var(--text-secondary);">Hardware Integration<br>Machine Learning Accuracy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Roadmap & Deliverables -->
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1.5;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Future Roadmap</h4>
+                            <div style="font-size: 10px; line-height: 1.2; display: flex; flex-direction: column; align-items: center;">
+                                <strong style="color: var(--text-primary);">Phase 1</strong>
+                                <span style="color: var(--primary-accent);"><span style="color: #059669; font-weight: bold;">✔</span> Complete ESP32 Prototype</span>
+                                <div style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <strong style="color: var(--text-primary);">Phase 2</strong>
+                                <span style="color: var(--primary-accent);"><span style="color: #059669; font-weight: bold;">✔</span> Integrate Backend APIs</span>
+                                <div style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <strong style="color: var(--text-primary);">Phase 3</strong>
+                                <span style="color: var(--primary-accent);"><span style="color: #059669; font-weight: bold;">✔</span> Train &amp; Validate ML Model</span>
+                                <div style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <strong style="color: var(--text-primary);">Phase 4</strong>
+                                <span style="color: var(--primary-accent);"><span style="color: #059669; font-weight: bold;">✔</span> Implement Route Optimization</span>
+                                <div style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <strong style="color: var(--text-primary);">Phase 5</strong>
+                                <span style="color: var(--primary-accent);"><span style="color: #059669; font-weight: bold;">✔</span> Complete Dashboard Integration</span>
+                                <div style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <strong style="color: var(--text-primary);">Phase 6</strong>
+                                <span style="color: var(--primary-accent);"><span style="color: #059669; font-weight: bold;">✔</span> End-to-End System Testing</span>
+                                <div style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <strong style="color: var(--text-primary);">Phase 7</strong>
+                                <span style="color: var(--primary-accent);"><span style="color: #059669; font-weight: bold;">✔</span> Final Demonstration</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Expected Deliverables</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 11px; line-height: 1.5;">
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Working Hardware Prototype</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Live Dashboard</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Trained ML Model</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Optimized Collection Routes</li>
+                                <li style="margin-bottom: 2px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Performance Evaluation</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Final Research Report</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-box" style="padding: 8px 15px; margin-bottom: 8px; background: rgba(5, 150, 105, 0.05); border-left: 4px solid var(--primary-accent);">
+                    <h4 class="accent-text" style="font-size: 14px; margin-bottom: 4px;">Project Outlook</h4>
+                    <p style="font-size: 14px; line-height: 1.4; color: var(--text-secondary);">The remaining development focuses on integrating all hardware and software modules into a fully functional prototype. Rigorous testing, performance evaluation, and optimization will be carried out before the final review to ensure a reliable and scalable smart waste management solution.</p>
+                </div>
+            </div>
+            <div class="slide-number">13 / 15</div>
+        </div>
+
+        <!-- Slide 14: Expected Outcomes & Review 03 Roadmap -->
+        <div class="slide">
+            <div class="top-tab"></div>
+            <div class="slide-content" style="padding: 1% 4%;">
+                <div style="text-align: center; margin-bottom: 5px;">
+                    <h2 class="slide-title" style="font-size: 32px; margin-bottom: 2px;">Expected Outcomes &amp; Review 03 Roadmap</h2>
+                    <p style="color: var(--primary-accent); font-size: 16px; font-weight: 500;">Project Deliverables and Final Development Plan</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 26% 48% 26%; gap: 15px; margin-bottom: 8px; align-items: stretch;">
+                    
+                    <!-- Left Column: Outcomes & Goals -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1.5;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Expected Technical Outcomes</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 11px; line-height: 1.5;">
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Functional IoT Smart Bin Prototype</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Real-Time Data Collection System</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Machine Learning Prediction Model</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Intelligent Overflow Detection</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Optimized Waste Collection Routes</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Interactive Monitoring Dashboard</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Complete Backend Integration</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Centralized PostgreSQL Database</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Performance Goals</h4>
+                            <div style="font-size: 11px; line-height: 1.4;">
+                                <strong style="color: var(--text-primary);">Prediction Accuracy</strong><br>
+                                <span style="color: var(--text-secondary);">Target: High Accuracy (MAE, RMSE &amp; R²)</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary);">Route Optimization</strong><br>
+                                <span style="color: var(--text-secondary);">Reduced Travel Distance &amp; Collection Time</span>
+                                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 6px 0;">
+                                <strong style="color: var(--text-primary);">System Performance</strong><br>
+                                <span style="color: var(--text-secondary);">Real-Time Data, Low API Latency</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Center Column: Roadmap Flowchart -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 2; display: flex; flex-direction: column; align-items: center; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.02);">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 6px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; width: 100%;">Review 03 Development Roadmap</h4>
+                            
+                            <div class="flowchart" style="width: 100%; font-size: 11px; gap: 4px; align-items: center;">
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 12px; font-weight: bold; background: var(--slide-bg); border-color: var(--primary-accent);">Review 02: Implementation Phase</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1; color: var(--primary-accent);">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 11px; font-weight: bold; background: var(--slide-bg);">Hardware Assembly</div>
+                                <div class="flow-arrow" style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 11px; font-weight: bold; background: var(--slide-bg);">Backend Integration</div>
+                                <div class="flow-arrow" style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 11px; font-weight: bold; background: var(--slide-bg);">Database Connection</div>
+                                <div class="flow-arrow" style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 11px; font-weight: bold; background: var(--slide-bg);">Machine Learning Training</div>
+                                <div class="flow-arrow" style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 11px; font-weight: bold; background: var(--slide-bg);">Route Optimization</div>
+                                <div class="flow-arrow" style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 11px; font-weight: bold; background: var(--slide-bg);">Dashboard Integration</div>
+                                <div class="flow-arrow" style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 11px; font-weight: bold; background: var(--slide-bg);">System Testing</div>
+                                <div class="flow-arrow" style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 11px; font-weight: bold; background: var(--slide-bg);">Performance Evaluation</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1; color: var(--primary-accent);">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 12px; font-weight: bold; background: var(--slide-bg); border-color: var(--primary-accent);">Review 03: Final Working Prototype</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Deliverables & Criteria -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1.5;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Review 03 Deliverables</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 11px; line-height: 1.5;">
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Working Hardware</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Live Dashboard</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Sensor Demonstration</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> ML Prediction Results</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Route Optimization Demo</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Performance Metrics</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> End-to-End System Demo</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Complete Documentation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Success Criteria</h4>
+                            <table class="custom-table" style="font-size: 10px; margin-top: 0; box-shadow: none;">
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">Hardware Prototype</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color); color: #10b981; font-weight: bold;">Complete</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">Backend Integration</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color); color: #10b981; font-weight: bold;">Complete</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">ML Model</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color); color: #10b981; font-weight: bold;">Validated</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">Dashboard</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color); color: #10b981; font-weight: bold;">Functional</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: 1px solid var(--border-color);">Route Optimization</td>
+                                        <td style="padding: 4px; border-bottom: 1px solid var(--border-color); color: #10b981; font-weight: bold;">Operational</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px; font-weight: bold; border-bottom: none;">End-to-End Testing</td>
+                                        <td style="padding: 4px; border-bottom: none; color: #10b981; font-weight: bold;">Successful</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-box" style="padding: 8px 15px; margin-bottom: 8px; background: rgba(5, 150, 105, 0.05); border-left: 4px solid var(--primary-accent);">
+                    <h4 class="accent-text" style="font-size: 14px; margin-bottom: 4px;">Expected Project Outcome</h4>
+                    <p style="font-size: 14px; line-height: 1.4; color: var(--text-secondary);">By Review 03, EcoBin will evolve into a fully integrated smart waste management prototype capable of monitoring waste bins in real time, predicting future fill levels, optimizing collection routes, and providing actionable insights through an interactive dashboard.</p>
+                </div>
+            </div>
+            <div class="slide-number">14 / 15</div>
+        </div>
+
+        <!-- Slide 15: Thank You & Live Demonstration -->
+        <div class="slide">
+            <div class="top-tab-right"></div>
+            <div class="slide-content" style="padding: 1% 4%;">
+                <div style="text-align: center; margin-bottom: 5px;">
+                    <h2 class="slide-title" style="font-size: 32px; margin-bottom: 2px;">Thank You</h2>
+                    <p style="color: var(--primary-accent); font-size: 16px; font-weight: 500;">EcoBin – Smart Waste Fill-Level Prediction &amp; Intelligent Route Optimization System</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 26% 48% 26%; gap: 15px; margin-bottom: 8px; align-items: stretch;">
+                    
+                    <!-- Left Column: Summary & Focus -->
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1.5;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Review 02 Summary</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 11px; line-height: 1.5;">
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Project Architecture Finalized</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Repository Structure Completed</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Database Design Completed</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> IoT Hardware Design Completed</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Machine Learning Pipeline Designed</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Backend Integration Planned</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Dashboard Interface Developed</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Route Optimization Strategy Defined</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);"><span style="color: #059669; margin-right: 6px; font-weight: bold;">✔</span> Interactive Simulation Ready</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1;">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">Review 03 Focus</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0; font-size: 11px; line-height: 1.5;">
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);">• Complete Hardware Prototype</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);">• End-to-End System Integration</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);">• ML Model Validation</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);">• Route Optimization Testing</li>
+                                <li style="margin-bottom: 4px; color: var(--text-secondary);">• Performance Evaluation</li>
+                                <li style="margin-bottom: 0px; color: var(--text-secondary);">• Final Prototype Demonstration</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Center Column: Implementation Journey -->
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 2; display: flex; flex-direction: column; align-items: center; border-color: var(--primary-accent); background: rgba(5, 150, 105, 0.02);">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 6px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 6px; width: 100%;">EcoBin Implementation Journey</h4>
+                            
+                            <div class="flowchart" style="width: 100%; font-size: 11px; gap: 4px; align-items: center;">
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 11px; font-weight: bold; background: var(--slide-bg);">Problem Identification</div>
+                                <div class="flow-arrow" style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 11px; font-weight: bold; background: var(--slide-bg);">Research &amp; Literature Review</div>
+                                <div class="flow-arrow" style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 11px; font-weight: bold; background: var(--slide-bg);">System Architecture</div>
+                                <div class="flow-arrow" style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 11px; font-weight: bold; background: var(--slide-bg);">Implementation</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1; color: var(--primary-accent);">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 12px; font-weight: bold; background: var(--slide-bg); border-color: var(--primary-accent);">Module Integration</div>
+                                <div class="flow-arrow" style="font-size: 12px; line-height: 1; color: var(--primary-accent);">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 11px; font-weight: bold; background: var(--slide-bg);">Testing &amp; Validation</div>
+                                <div class="flow-arrow" style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 11px; font-weight: bold; background: var(--slide-bg);">Final Prototype</div>
+                                <div class="flow-arrow" style="font-size: 10px; line-height: 1;">&darr;</div>
+                                <div class="flow-box" style="padding: 4px 10px; width: 280px; font-size: 11px; font-weight: bold; background: var(--slide-bg);">Smart City Deployment</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Thank You -->
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <div class="card-box" style="padding: 10px; margin-bottom: 0; flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(5, 150, 105, 0.05); border: 1px solid var(--primary-accent);">
+                            <h4 style="font-size: 32px; color: var(--text-primary); margin-bottom: 15px;">Thank You</h4>
+                            <p style="font-size: 16px; color: var(--text-secondary); text-align: center; font-weight: bold;">Questions &amp; Discussion</p>
+                            <hr style="border: 0; border-top: 1px solid var(--primary-accent); margin: 15px 0; width: 60%;">
+                            <p style="font-size: 14px; color: var(--text-secondary); text-align: center;">School of Technology<br>Woxsen University</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Footer -->
+                <div class="card-box" style="padding: 8px 15px; margin-bottom: 8px; background: rgba(5, 150, 105, 0.05); border-left: 4px solid var(--primary-accent); display: flex; justify-content: space-between; align-items: center;">
+                    <div style="display: flex; align-items: center; font-size: 12px;">
+                        <strong style="margin-right: 10px; color: var(--text-primary);">Overall Progress:</strong>
+                        <div style="width: 150px; height: 12px; background: rgba(5, 150, 105, 0.2); border-radius: 6px; overflow: hidden; margin-right: 10px;">
+                            <div style="width: 75%; height: 100%; background: var(--primary-accent);"></div>
+                        </div>
+                        <strong style="color: var(--primary-accent);">75% Complete</strong>
+                    </div>
+                    
+                    <div style="font-size: 12px; font-weight: bold; color: var(--text-secondary); letter-spacing: 1px;">
+                        DESIGN <span style="color: var(--primary-accent);">→</span> IMPLEMENT <span style="color: var(--primary-accent);">→</span> INTEGRATE <span style="color: var(--primary-accent);">→</span> VALIDATE <span style="color: var(--primary-accent);">→</span> DEPLOY
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">15 / 15</div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
