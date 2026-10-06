@@ -294,13 +294,7 @@
                     <div class="card-box" style="padding: 15px; margin: 0; display: flex; flex-direction: column;">
                         <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center;">Hardware Architecture</h4>
                         
-                        <!-- Image Strip -->
-                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 15px;">
-                            <div style="background: #e5e7eb; height: 60px; border-radius: 6px; display: flex; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 10px; color: #6b7280; font-weight: bold; text-align: center; padding: 5px;">[ESP32 Photo]</div>
-                            <div style="background: #e5e7eb; height: 60px; border-radius: 6px; display: flex; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 10px; color: #6b7280; font-weight: bold; text-align: center; padding: 5px;">[HC-SR04 Photo]</div>
-                            <div style="background: #e5e7eb; height: 60px; border-radius: 6px; display: flex; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 10px; color: #6b7280; font-weight: bold; text-align: center; padding: 5px;">[Full Setup]</div>
-                            <div style="background: #e5e7eb; height: 60px; border-radius: 6px; display: flex; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 10px; color: #6b7280; font-weight: bold; text-align: center; padding: 5px;">[Serial Monitor]</div>
-                        </div>
+
 
                         <!-- Architecture Flow -->
                         <div class="flow-diagram vertical" style="font-size: 11px; gap: 4px; width: 100%; border: none; background: transparent; padding: 0; margin: 0; align-items: center;">
@@ -516,17 +510,7 @@
                     <div class="card-box" style="padding: 15px; margin: 0; display: flex; flex-direction: column;">
                         <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px; text-align: center;">ML Prediction Pipeline</h4>
                         
-                        <!-- Prediction Visuals Grid -->
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; flex: 1;">
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 10px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; flex-direction: column;">
-                                <span style="font-size: 24px; margin-bottom: 5px;">📈</span>
-                                [Actual vs. Predicted Graph]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 10px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; flex-direction: column;">
-                                <span style="font-size: 24px; margin-bottom: 5px;">📊</span>
-                                [Feature Importance Chart]
-                            </div>
-                        </div>
+
 
                         <!-- Main Flow Diagram -->
                         <div class="flow-diagram vertical" style="font-size: 11px; gap: 4px; width: 100%; border: none; background: transparent; padding: 0; margin: 0; align-items: center;">
@@ -549,18 +533,33 @@
                     <!-- Right Section: Performance, Benefits & Results -->
                     <div style="display: flex; flex-direction: column; gap: 15px;">
                         <!-- Performance Metrics Grid -->
-                        <div class="card-box" style="padding: 10px; margin: 0; border-left: 4px solid var(--primary-accent); display: flex; justify-content: space-around; text-align: center;">
-                            <div>
-                                <div style="font-size: 16px; font-weight: bold; color: var(--primary-accent);">XX</div>
-                                <div style="font-size: 10px; color: var(--text-secondary);">MAE</div>
-                            </div>
-                            <div>
-                                <div style="font-size: 16px; font-weight: bold; color: var(--primary-accent);">XX</div>
-                                <div style="font-size: 10px; color: var(--text-secondary);">RMSE</div>
-                            </div>
-                            <div>
-                                <div style="font-size: 16px; font-weight: bold; color: var(--primary-accent);">XX</div>
-                                <div style="font-size: 10px; color: var(--text-secondary);">R&sup2; Score</div>
+                        <div class="card-box" style="padding: 10px; margin: 0; border-left: 4px solid var(--primary-accent);">
+                            <div style="font-size: 10px; font-weight: bold; margin-bottom: 8px; text-align: center; color: var(--text-primary);">EcoBin Performance Snapshot</div>
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center;">
+                                <div>
+                                    <div style="font-size: 14px; font-weight: bold; color: var(--primary-accent);">235.96</div>
+                                    <div style="font-size: 9px; color: var(--text-secondary);">km/day</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 14px; font-weight: bold; color: var(--primary-accent);">70.79</div>
+                                    <div style="font-size: 9px; color: var(--text-secondary);">L/day</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 14px; font-weight: bold; color: var(--primary-accent);">92.69%</div>
+                                    <div style="font-size: 9px; color: var(--text-secondary);">Truck Util.</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 14px; font-weight: bold; color: var(--primary-accent);">189.71</div>
+                                    <div style="font-size: 9px; color: var(--text-secondary);">kg CO₂/day</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 14px; font-weight: bold; color: var(--primary-accent);">32.35</div>
+                                    <div style="font-size: 9px; color: var(--text-secondary);">Overflows/day</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 14px; font-weight: bold; color: var(--primary-accent);">69.48</div>
+                                    <div style="font-size: 9px; color: var(--text-secondary);">Bins/day</div>
+                                </div>
                             </div>
                         </div>
 
@@ -691,17 +690,7 @@
                                 </div>
                             </div>
                             
-                            <!-- Visual Placeholders -->
-                            <div style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
-                                <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex: 1; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 10px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; flex-direction: column;">
-                                    <span style="font-size: 24px; margin-bottom: 5px;">🗺️</span>
-                                    [Map Route Screenshot]
-                                </div>
-                                <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex: 1; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 10px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; flex-direction: column;">
-                                    <span style="font-size: 24px; margin-bottom: 5px;">📊</span>
-                                    [Distance Comparison Chart]
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 
@@ -781,18 +770,7 @@
                     <!-- Center Section -->
                     <div class="card-box" style="padding: 15px; margin: 0; display: flex; flex-direction: column;">
                         
-                        <!-- Screenshot Placeholders Grid -->
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 15px;">
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 9px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 16px;">🖥️</span> [Main Dashboard]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 9px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 16px;">🗺️</span> [Live Map]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 9px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 16px;">📊</span> [Charts &amp; Alerts]
-                            </div>
-                        </div>
+
                         
                         <div style="display: flex; gap: 15px; flex: 1;">
                             <!-- Workflow Flowchart -->
@@ -922,18 +900,7 @@
                     <!-- Center Section -->
                     <div class="card-box" style="padding: 15px; margin: 0; display: flex; flex-direction: column;">
                         
-                        <!-- Screenshot Placeholders Grid -->
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 15px;">
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 9px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 16px;">📷</span> [Hardware Photo]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 9px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 16px;">💻</span> [API Screenshot]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 9px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 16px;">🗄️</span> [Database DB]
-                            </div>
-                        </div>
+
                         
                         <div style="display: flex; gap: 15px; flex: 1;">
                             <!-- Workflow Flowchart -->
@@ -979,14 +946,7 @@
                                     </tbody>
                                 </table>
                                 
-                                <div style="display: flex; gap: 8px; margin-top: 10px;">
-                                    <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 9px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; flex: 1;">
-                                        <span style="font-size: 16px;">📡</span> [Serial Log]
-                                    </div>
-                                    <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 9px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; flex: 1;">
-                                        <span style="font-size: 16px;">🗺️</span> [Opt. Route]
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -1043,46 +1003,33 @@
                     <!-- Left Section -->
                     <div style="display: flex; flex-direction: column; gap: 15px;">
                         <div class="card-box" style="padding: 15px; margin: 0; flex: 1;">
-                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px;">Evaluation Metrics</h4>
-                            <div style="font-size: 11px; color: var(--text-secondary); line-height: 1.4;">
-                                <strong style="color: var(--text-primary);">IoT Performance</strong><br>&bull; Sensor Accuracy<br>&bull; Data Transmission<br>&bull; Response Time<hr style="border: 0; border-top: 1px solid var(--border-color); margin: 6px 0;">
-                                <strong style="color: var(--text-primary);">Machine Learning</strong><br>&bull; MAE<br>&bull; RMSE<br>&bull; R² Score<hr style="border: 0; border-top: 1px solid var(--border-color); margin: 6px 0;">
-                                <strong style="color: var(--text-primary);">Route Optimization</strong><br>&bull; Distance Reduction<br>&bull; Collection Time<br>&bull; Fuel Efficiency
-                            </div>
-                        </div>
-                        <div class="card-box" style="padding: 15px; margin: 0; background: rgba(5, 150, 105, 0.03);">
-                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px;">System Performance</h4>
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 10px;">Model &amp; System Metrics</h4>
                             <table class="custom-table" style="font-size: 11px; margin-top: 0; width: 100%;">
                                 <tbody>
-                                    <tr><td style="padding: 6px; border-bottom: 1px solid var(--border-color); color: var(--text-secondary);">Sensor Response</td><td style="padding: 6px; border-bottom: 1px solid var(--border-color); font-weight: bold; text-align: right;">XX ms</td></tr>
-                                    <tr><td style="padding: 6px; border-bottom: 1px solid var(--border-color); color: var(--text-secondary);">API Response</td><td style="padding: 6px; border-bottom: 1px solid var(--border-color); font-weight: bold; text-align: right;">XX ms</td></tr>
-                                    <tr><td style="padding: 6px; border-bottom: 1px solid var(--border-color); color: var(--text-secondary);">Data Success Rate</td><td style="padding: 6px; border-bottom: 1px solid var(--border-color); font-weight: bold; color: var(--primary-accent); text-align: right;">XX %</td></tr>
-                                    <tr><td style="padding: 6px; border-bottom: 1px solid var(--border-color); color: var(--text-secondary);">Prediction Accuracy</td><td style="padding: 6px; border-bottom: 1px solid var(--border-color); font-weight: bold; color: var(--primary-accent); text-align: right;">XX %</td></tr>
-                                    <tr><td style="padding: 6px; border-bottom: none; color: var(--text-secondary);">Route Gen Time</td><td style="padding: 6px; border-bottom: none; font-weight: bold; text-align: right;">XX sec</td></tr>
+                                    <tr><td style="padding: 6px; border-bottom: 1px solid var(--border-color); color: var(--text-secondary);">Dataset Size</td><td style="padding: 6px; border-bottom: 1px solid var(--border-color); font-weight: bold; text-align: right;">876,000</td></tr>
+                                    <tr><td style="padding: 6px; border-bottom: 1px solid var(--border-color); color: var(--text-secondary);">Test Samples</td><td style="padding: 6px; border-bottom: 1px solid var(--border-color); font-weight: bold; text-align: right;">56,641</td></tr>
+                                    <tr><td style="padding: 6px; border-bottom: 1px solid var(--border-color); color: var(--text-secondary);">Dispatch Cycle</td><td style="padding: 6px; border-bottom: 1px solid var(--border-color); font-weight: bold; color: var(--primary-accent); text-align: right;">&lt;500 ms</td></tr>
+                                    <tr><td style="padding: 6px; border-bottom: 1px solid var(--border-color); color: var(--text-secondary);">Smart Bins</td><td style="padding: 6px; border-bottom: 1px solid var(--border-color); font-weight: bold; color: var(--primary-accent); text-align: right;">100</td></tr>
+                                    <tr><td style="padding: 6px; border-bottom: none; color: var(--text-secondary);">Overflow Recall</td><td style="padding: 6px; border-bottom: none; font-weight: bold; text-align: right;">93.6%</td></tr>
                                 </tbody>
                             </table>
-                            <div style="font-size: 8px; color: var(--text-secondary); text-align: center; margin-top: 5px; font-style: italic;">* Replace XX with measured values</div>
+                        </div>
+                        <div class="card-box" style="padding: 15px; margin: 0; background: rgba(5, 150, 105, 0.03);">
+                            <h4 class="accent-text" style="font-size: 14px; margin-bottom: 8px;">ML Performance</h4>
+                            <table class="custom-table" style="font-size: 11px; margin-top: 0; width: 100%;">
+                                <tbody>
+                                    <tr><td style="padding: 6px; border-bottom: 1px solid var(--border-color); color: var(--text-secondary);">MAE</td><td style="padding: 6px; border-bottom: 1px solid var(--border-color); font-weight: bold; text-align: right;">4.37%</td></tr>
+                                    <tr><td style="padding: 6px; border-bottom: 1px solid var(--border-color); color: var(--text-secondary);">RMSE</td><td style="padding: 6px; border-bottom: 1px solid var(--border-color); font-weight: bold; text-align: right;">5.73%</td></tr>
+                                    <tr><td style="padding: 6px; border-bottom: none; color: var(--text-secondary);">R&sup2; Score</td><td style="padding: 6px; border-bottom: none; font-weight: bold; color: var(--primary-accent); text-align: right;">0.861</td></tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
                     <!-- Center Section -->
                     <div class="card-box" style="padding: 15px; margin: 0; display: flex; flex-direction: column;">
                         
-                        <!-- Screenshot Placeholders Grid -->
-                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 15px;">
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">📊</span> [Bar Chart]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">📈</span> [ML Accuracy]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">📉</span> [Response Time]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">🗺️</span> [Route Opt]
-                            </div>
-                        </div>
+
                         
                         <div style="display: flex; gap: 15px; flex: 1;">
                             <!-- Workflow Flowchart -->
@@ -1123,12 +1070,12 @@
                                 
                                 <div style="display: flex; gap: 8px; margin-top: 15px;">
                                     <div style="background: rgba(5, 150, 105, 0.05); border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid var(--primary-accent); font-size: 9px; color: var(--text-primary); text-align: center; padding: 10px; flex: 1;">
-                                        <span style="font-size: 12px; font-weight: bold; color: var(--primary-accent); margin-bottom: 2px;">XX%</span>
-                                        Distance Saved
+                                        <span style="font-size: 12px; font-weight: bold; color: var(--primary-accent); margin-bottom: 2px;">92.69%</span>
+                                        Truck Utilization
                                     </div>
                                     <div style="background: rgba(33, 150, 243, 0.05); border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid var(--accent-blue); font-size: 9px; color: var(--text-primary); text-align: center; padding: 10px; flex: 1;">
-                                        <span style="font-size: 12px; font-weight: bold; color: var(--accent-blue); margin-bottom: 2px;">XX hrs</span>
-                                        Time Saved
+                                        <span style="font-size: 12px; font-weight: bold; color: var(--accent-blue); margin-bottom: 2px;">0.727</span>
+                                        Overflow F1 Score
                                     </div>
                                 </div>
                             </div>
@@ -1205,21 +1152,7 @@
                     <!-- Center Section -->
                     <div class="card-box" style="padding: 15px; margin: 0; display: flex; flex-direction: column;">
                         
-                        <!-- Screenshot Placeholders Grid -->
-                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 15px;">
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">📊</span> [Before/After]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">📈</span> [Workflow Chart]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">🗺️</span> [Map Comparison]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">📷</span> [Dashboard vs Manual]
-                            </div>
-                        </div>
+
                         
                         <div style="display: flex; gap: 15px; flex: 1;">
                             <!-- Feature Comparison Table -->
@@ -1364,18 +1297,7 @@
                     <!-- Center Section -->
                     <div class="card-box" style="padding: 15px; margin: 0; display: flex; flex-direction: column;">
                         
-                        <!-- Screenshot Placeholders Grid -->
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 15px;">
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">🔧</span> [Hardware Testing]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">📡</span> [Serial Monitor]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">💻</span> [API/DB Screenshot]
-                            </div>
-                        </div>
+
                         
                         <div style="display: flex; gap: 15px; flex: 1;">
                             <!-- Workflow Flowchart -->
@@ -1505,18 +1427,7 @@
                     <!-- Center Section -->
                     <div class="card-box" style="padding: 15px; margin: 0; display: flex; flex-direction: column;">
                         
-                        <!-- Screenshot Placeholders Grid -->
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 15px;">
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">📷</span> [Hardware]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">🖥️</span> [Dashboard]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">🔗</span> [Architecture]
-                            </div>
-                        </div>
+
                         
                         <div style="display: flex; gap: 15px; flex: 1;">
                             <!-- Final EcoBin Solution Flowchart -->
@@ -1652,18 +1563,7 @@
                     <!-- Center Section -->
                     <div class="card-box" style="padding: 15px; margin: 0; display: flex; flex-direction: column;">
                         
-                        <!-- Screenshot Placeholders Grid -->
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 15px;">
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">🌍</span> [Smart City]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">🔄</span> [Lifecycle Graphic]
-                            </div>
-                            <div style="background: #e5e7eb; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px dashed #9ca3af; font-size: 8px; color: #6b7280; font-weight: bold; text-align: center; padding: 10px; height: 60px;">
-                                <span style="font-size: 14px;">🗺️</span> [Route Map]
-                            </div>
-                        </div>
+
                         
                         <div style="display: flex; gap: 15px; flex: 1;">
                             <!-- EcoBin Complete Workflow -->
